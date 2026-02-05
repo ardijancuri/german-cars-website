@@ -2,12 +2,34 @@ import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons'
 
 const services = [
-  { name: 'XPEL-PPF / Lackschutzfolie', path: '/lackschutz' },
-  { name: 'Car-Wrapping', path: '/car-wrapping' },
-  { name: 'Detailing', path: '/detailing' },
-  { name: 'Scheibentönung', path: '/scheibentoenung' },
+  {
+    name: 'XPEL-PPF / Lackschutzfolie',
+    path: '/lackschutz',
+    image: '/images/gallery-1.jpg',
+    description: 'Schützen Sie Ihren Lack vor Steinschlägen'
+  },
+  {
+    name: 'Car-Wrapping',
+    path: '/car-wrapping',
+    image: '/images/epic-cars-car-wrapping.jpg',
+    description: 'Individuelle Fahrzeugfolierung'
+  },
+  {
+    name: 'Detailing',
+    path: '/detailing',
+    image: '/images/gallery-6.jpg',
+    description: 'High-End Fahrzeugaufbereitung'
+  },
+  {
+    name: 'Scheibentönung',
+    path: '/scheibentoenung',
+    image: '/images/gallery-4.jpg',
+    description: 'Professionelle Scheibentönung'
+  },
 ]
 
 const navLinks = [
@@ -77,9 +99,11 @@ export default function Navbar() {
             style={{
               alignItems: 'center',
               gap: '40px',
+              flex: 1,
+              marginLeft: '48px',
             }}
           >
-            {/* Services Dropdown */}
+            {/* Services Megamenu */}
             <div
               style={{ position: 'relative' }}
               onMouseEnter={() => setServicesOpen(true)}
@@ -99,52 +123,115 @@ export default function Navbar() {
               <AnimatePresence>
                 {servicesOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 8 }}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
-                    transition={{ duration: 0.15 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
                     style={{
-                      position: 'absolute',
-                      top: '100%',
+                      position: 'fixed',
                       left: 0,
-                      paddingTop: '16px',
+                      right: 0,
+                      top: scrolled ? '68px' : '72px',
+                      backgroundColor: '#ffffff',
+                      boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)',
+                      zIndex: 40,
                     }}
                   >
                     <div
                       style={{
-                        width: '256px',
-                        backgroundColor: 'rgba(22, 22, 22, 0.95)',
-                        backdropFilter: 'blur(12px)',
-                        borderRadius: '12px',
-                        overflow: 'hidden',
-                        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8)',
-                        border: '1px solid rgba(255, 255, 255, 0.05)',
+                        maxWidth: '1400px',
+                        margin: '0 auto',
+                        padding: '40px 24px',
                       }}
                     >
-                      {services.map((service) => (
-                        <Link
-                          key={service.path}
-                          to={service.path}
-                          style={{
-                            display: 'block',
-                            padding: '14px 20px',
-                            fontSize: '14px',
-                            color: 'rgba(255, 255, 255, 0.8)',
-                            textDecoration: 'none',
-                            transition: 'all 0.2s',
-                          }}
-                          onMouseEnter={(e) => {
-                            e.target.style.color = '#ffffff'
-                            e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.05)'
-                          }}
-                          onMouseLeave={(e) => {
-                            e.target.style.color = 'rgba(255, 255, 255, 0.8)'
-                            e.target.style.backgroundColor = 'transparent'
-                          }}
-                        >
-                          {service.name}
-                        </Link>
-                      ))}
+                      <div
+                        style={{
+                          display: 'grid',
+                          gridTemplateColumns: 'repeat(4, 1fr)',
+                          gap: '24px',
+                        }}
+                      >
+                        {services.map((service) => (
+                          <Link
+                            key={service.path}
+                            to={service.path}
+                            className="group"
+                            style={{
+                              display: 'block',
+                              textDecoration: 'none',
+                              borderRadius: '8px',
+                              overflow: 'hidden',
+                              transition: 'transform 0.3s ease',
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.transform = 'translateY(-4px)'
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.transform = 'translateY(0)'
+                            }}
+                          >
+                            {/* Image */}
+                            <div
+                              style={{
+                                position: 'relative',
+                                aspectRatio: '16/10',
+                                overflow: 'hidden',
+                                borderRadius: '8px',
+                                marginBottom: '12px',
+                              }}
+                            >
+                              <img
+                                src={service.image}
+                                alt={service.name}
+                                style={{
+                                  width: '100%',
+                                  height: '100%',
+                                  objectFit: 'cover',
+                                  filter: 'grayscale(100%)',
+                                  transition: 'filter 0.3s ease, transform 0.3s ease',
+                                }}
+                                onMouseEnter={(e) => {
+                                  e.target.style.filter = 'grayscale(0%)'
+                                  e.target.style.transform = 'scale(1.05)'
+                                }}
+                                onMouseLeave={(e) => {
+                                  e.target.style.filter = 'grayscale(100%)'
+                                  e.target.style.transform = 'scale(1)'
+                                }}
+                              />
+                            </div>
+                            {/* Content */}
+                            <div>
+                              <h3
+                                style={{
+                                  color: '#000000',
+                                  fontSize: '16px',
+                                  fontWeight: 700,
+                                  marginBottom: '4px',
+                                  transition: 'color 0.3s ease',
+                                }}
+                                onMouseEnter={(e) => {
+                                  e.target.style.color = '#E54B1E'
+                                }}
+                                onMouseLeave={(e) => {
+                                  e.target.style.color = '#000000'
+                                }}
+                              >
+                                {service.name}
+                              </h3>
+                              <p
+                                style={{
+                                  color: '#666666',
+                                  fontSize: '13px',
+                                  lineHeight: 1.5,
+                                }}
+                              >
+                                {service.description}
+                              </p>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </motion.div>
                 )}
@@ -162,28 +249,66 @@ export default function Navbar() {
               </NavLink>
             ))}
 
-            {/* CTA Button */}
-            <Link
-              to="/kontakt"
-              className="btn-primary"
+            {/* Right Side - Social Icons & CTA Button */}
+            <div
               style={{
-                marginLeft: '16px',
-                padding: '12px 28px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '24px',
+                marginLeft: 'auto',
               }}
             >
-              Angebot anfordern
-            </Link>
+              {/* Social Icons */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: '#ffffff',
+                    transition: 'color 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#E54B1E'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}
+                >
+                  <FontAwesomeIcon icon={faInstagram} style={{ height: '24px', width: '24px' }} />
+                </a>
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: '#ffffff',
+                    transition: 'color 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#E54B1E'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}
+                >
+                  <FontAwesomeIcon icon={faFacebook} style={{ height: '24px', width: '24px' }} />
+                </a>
+              </div>
+
+              {/* CTA Button */}
+              <Link
+                to="/kontakt"
+                className="btn-primary"
+                style={{
+                  padding: '12px 28px',
+                }}
+              >
+                Angebot anfordern
+              </Link>
+            </div>
           </div>
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden"
+            className="flex lg:hidden"
             style={{
               position: 'relative',
               zIndex: 10,
               width: '40px',
               height: '40px',
-              display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               color: '#ffffff',
