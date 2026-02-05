@@ -20,7 +20,7 @@ const footerLinks = {
 }
 
 const socialLinks = [
-  { name: 'Instagram', icon: Instagram, url: 'https://instagram.com' },
+  { name: 'Instagram', icon: Instagram, url: 'https://www.instagram.com/autopflege_aria' },
   { name: 'Facebook', icon: Facebook, url: 'https://facebook.com' },
   { name: 'YouTube', icon: Youtube, url: 'https://youtube.com' },
 ]

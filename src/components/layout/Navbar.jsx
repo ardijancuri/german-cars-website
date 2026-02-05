@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -43,6 +43,7 @@ export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
+  const servicesRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,6 +52,21 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // Close services menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (servicesRef.current && !servicesRef.current.contains(event.target)) {
+        setServicesOpen(false)
+      }
+    }
+    if (servicesOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [servicesOpen])
 
   useEffect(() => {
     setMobileMenuOpen(false)
@@ -131,11 +147,14 @@ export default function Navbar() {
           >
             {/* Services Megamenu */}
             <div
+              ref={servicesRef}
               style={{ position: 'relative' }}
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
             >
-              <button className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <button
+                className="nav-link"
+                style={{ display: 'flex', alignItems: 'center', gap: '4px' }}
+                onClick={() => setServicesOpen(!servicesOpen)}
+              >
                 Services
                 <ChevronDown
                   style={{
@@ -148,22 +167,38 @@ export default function Navbar() {
               </button>
               <AnimatePresence>
                 {servicesOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.2 }}
-                    style={{
-                      position: 'fixed',
-                      left: 0,
-                      right: 0,
-                      top: '72px',
-                      backgroundColor: '#ffffff',
-                      boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)',
-                      zIndex: 40,
-                      pointerEvents: 'auto',
-                    }}
-                  >
+                  <>
+                    {/* Backdrop overlay to close menu when clicking outside */}
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      onClick={() => setServicesOpen(false)}
+                      style={{
+                        position: 'fixed',
+                        inset: 0,
+                        top: '72px',
+                        backgroundColor: 'transparent',
+                        zIndex: 39,
+                      }}
+                    />
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      style={{
+                        position: 'fixed',
+                        left: 0,
+                        right: 0,
+                        top: '72px',
+                        backgroundColor: '#ffffff',
+                        boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)',
+                        zIndex: 40,
+                        pointerEvents: 'auto',
+                      }}
+                    >
                     <div
                       style={{
                         maxWidth: '1400px',
@@ -190,6 +225,7 @@ export default function Navbar() {
                               overflow: 'hidden',
                               transition: 'transform 0.3s ease',
                             }}
+                            onClick={() => setServicesOpen(false)}
                             onMouseEnter={(e) => {
                               e.currentTarget.style.transform = 'translateY(-4px)'
                             }}
@@ -261,6 +297,7 @@ export default function Navbar() {
                       </div>
                     </div>
                   </motion.div>
+                  </>
                 )}
               </AnimatePresence>
             </div>
@@ -288,7 +325,7 @@ export default function Navbar() {
               {/* Social Icons */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/autopflege_aria"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
