@@ -67,7 +67,7 @@ export default function Navbar() {
         transition: 'all 0.3s ease',
         backgroundColor: scrolled ? 'rgba(0, 0, 0, 0.95)' : 'transparent',
         backdropFilter: scrolled ? 'blur(12px)' : 'none',
-        padding: scrolled ? '12px 0' : '16px 0',
+        padding: '16px 0',
       }}
     >
       <nav
@@ -131,7 +131,7 @@ export default function Navbar() {
                       position: 'fixed',
                       left: 0,
                       right: 0,
-                      top: scrolled ? '68px' : '72px',
+                      top: '72px',
                       backgroundColor: '#ffffff',
                       boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)',
                       zIndex: 40,

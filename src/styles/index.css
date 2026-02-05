@@ -434,3 +434,18 @@ h1, h2, h3, h4, h5, h6 {
   width: 24px;
   border-radius: 5px;
 }
+
+/* Services pagination (dark background) */
+.services-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.services-pagination .swiper-pagination-bullet-active {
+  background: #E54B1E;
+  width: 24px;
+  border-radius: 5px;
+}

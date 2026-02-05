@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 const services = [
   {
@@ -84,13 +88,126 @@ export default function Services() {
           </p>
         </motion.div>
 
-        {/* Services Grid - 2x2 on desktop, stacked on mobile */}
+        {/* Mobile Slider - visible only on mobile */}
+        <div className="block sm:hidden" style={{ margin: '0 -24px' }}>
+          <Swiper
+            modules={[Pagination]}
+            slidesPerView={1.2}
+            spaceBetween={16}
+            centeredSlides={true}
+            grabCursor={true}
+            pagination={{
+              clickable: true,
+              el: '.services-pagination',
+            }}
+            style={{ padding: '0 0 16px' }}
+          >
+            {services.map((service, index) => (
+              <SwiperSlide key={service.title}>
+                <Link
+                  to={service.link}
+                  className="group"
+                  style={{
+                    display: 'block',
+                    position: 'relative',
+                    aspectRatio: '4/3',
+                    borderRadius: '12px',
+                    overflow: 'hidden',
+                    backgroundColor: '#161616',
+                  }}
+                >
+                  {/* Image */}
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="img-zoom"
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                    }}
+                  />
+
+                  {/* Gradient Overlay */}
+                  <div className="service-card-overlay" style={{ position: 'absolute', inset: 0 }} />
+
+                  {/* Large Background Number */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '10px',
+                      right: '15px',
+                      fontSize: 'clamp(60px, 15vw, 100px)',
+                      fontWeight: 900,
+                      fontFamily: 'Orbitron, sans-serif',
+                      color: 'rgba(255, 255, 255, 0.5)',
+                      lineHeight: 1,
+                      userSelect: 'none',
+                      zIndex: 1,
+                    }}
+                  >
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
+
+                  {/* Content */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'flex-end',
+                      padding: '16px',
+                    }}
+                  >
+                    <h3
+                      style={{
+                        color: '#ffffff',
+                        fontSize: 'clamp(16px, 4vw, 20px)',
+                        fontWeight: 700,
+                        marginBottom: '8px',
+                        transition: 'color 0.3s ease',
+                      }}
+                      className="group-hover:text-accent-orange"
+                    >
+                      {service.title}
+                    </h3>
+                    <p
+                      className="line-clamp-2"
+                      style={{
+                        color: 'rgba(255, 255, 255, 0.6)',
+                        fontSize: '14px',
+                        lineHeight: 1.6,
+                      }}
+                    >
+                      {service.description}
+                    </p>
+                  </div>
+                </Link>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* Pagination Dots */}
+          <div
+            className="services-pagination"
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '8px',
+              marginTop: '24px',
+            }}
+          />
+        </div>
+
+        {/* Services Grid - 2x2 on tablet/desktop, hidden on mobile */}
         <div
           style={{
-            display: 'grid',
             gap: '16px',
           }}
-          className="grid-cols-1 sm:grid-cols-2 lg:gap-6"
+          className="hidden sm:grid sm:grid-cols-2 lg:gap-6"
         >
           {services.map((service, index) => (
             <motion.div
