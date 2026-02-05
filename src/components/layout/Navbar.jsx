@@ -56,6 +56,18 @@ export default function Navbar() {
     setMobileMenuOpen(false)
   }, [location])
 
+  // Disable body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileMenuOpen])
+
   return (
     <header
       style={{
@@ -64,17 +76,28 @@ export default function Navbar() {
         left: 0,
         right: 0,
         zIndex: 50,
-        transition: 'all 0.3s ease',
-        backgroundColor: scrolled ? 'rgba(0, 0, 0, 0.95)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(12px)' : 'none',
         padding: '16px 0',
       }}
     >
+      {/* Background layer with backdrop-filter - separate from interactive content */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          transition: 'all 0.3s ease',
+          backgroundColor: scrolled ? 'rgba(0, 0, 0, 0.95)' : 'transparent',
+          backdropFilter: scrolled ? 'blur(12px)' : 'none',
+          WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
+          pointerEvents: 'none',
+        }}
+      />
       <nav
         style={{
           maxWidth: '1400px',
           margin: '0 auto',
           padding: '0 24px',
+          position: 'relative',
+          zIndex: 2,
         }}
       >
         <div
@@ -82,6 +105,8 @@ export default function Navbar() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
+            position: 'relative',
+            zIndex: 10,
           }}
         >
           {/* Logo */}
@@ -101,6 +126,7 @@ export default function Navbar() {
               gap: '40px',
               flex: 1,
               marginLeft: '48px',
+              pointerEvents: 'auto',
             }}
           >
             {/* Services Megamenu */}
@@ -135,6 +161,7 @@ export default function Navbar() {
                       backgroundColor: '#ffffff',
                       boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)',
                       zIndex: 40,
+                      pointerEvents: 'auto',
                     }}
                   >
                     <div
@@ -306,15 +333,16 @@ export default function Navbar() {
             className="flex lg:hidden"
             style={{
               position: 'relative',
-              zIndex: 10,
-              width: '40px',
-              height: '40px',
+              zIndex: 100,
+              width: '44px',
+              height: '44px',
               alignItems: 'center',
               justifyContent: 'center',
               color: '#ffffff',
-              background: 'none',
+              background: 'transparent',
               border: 'none',
               cursor: 'pointer',
+              pointerEvents: 'auto',
             }}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Menu"
@@ -337,7 +365,7 @@ export default function Navbar() {
                 inset: 0,
                 top: 0,
                 backgroundColor: 'rgba(0, 0, 0, 0.98)',
-                zIndex: 40,
+                zIndex: 60,
               }}
             >
               {/* Close button */}
