@@ -206,10 +206,18 @@ h1, h2, h3, h4, h5, h6 {
   width: 60px;
   height: 2px;
   background: linear-gradient(90deg, transparent, #E54B1E);
+  display: none;
 }
 
 .headline-decorated::after {
   background: linear-gradient(90deg, #E54B1E, transparent);
+}
+
+@media (min-width: 640px) {
+  .headline-decorated::before,
+  .headline-decorated::after {
+    display: block;
+  }
 }
 
 @media (min-width: 768px) {

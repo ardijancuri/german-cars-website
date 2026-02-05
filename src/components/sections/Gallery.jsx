@@ -46,9 +46,9 @@ export default function Gallery() {
           transition={{ duration: 0.6 }}
           style={{
             textAlign: 'center',
-            marginBottom: '56px',
+            marginBottom: '40px',
           }}
-          className="lg:mb-16"
+          className="sm:mb-14 lg:mb-16"
         >
           <h2
             className="headline-decorated"
@@ -58,10 +58,10 @@ export default function Gallery() {
               textTransform: 'uppercase',
               letterSpacing: '0.05em',
               marginBottom: '24px',
+              color: '#000000',
             }}
           >
-            <span style={{ color: '#000000' }}>Unsere </span>
-            <span style={{ color: '#000000' }}>Impressionen</span>
+            Unsere Impressionen
           </h2>
           <p
             style={{

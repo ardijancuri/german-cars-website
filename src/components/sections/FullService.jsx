@@ -76,10 +76,10 @@ export default function FullService() {
               textTransform: 'uppercase',
               letterSpacing: '0.05em',
               marginBottom: '24px',
+              color: '#ffffff',
             }}
           >
-            <span style={{ color: '#ffffff' }}>Epischer </span>
-            <span>Rundumservice</span>
+            Epischer Rundumservice
           </h2>
           <p
             style={{
@@ -99,10 +99,9 @@ export default function FullService() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
             gap: '16px',
           }}
-          className="lg:gap-6"
+          className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6"
         >
           {fullServices.map((service, index) => (
             <motion.div
@@ -151,48 +150,51 @@ export default function FullService() {
               {/* Content */}
               <div
                 style={{
-                  padding: '20px',
+                  padding: '16px',
                 }}
-                className="lg:p-6"
+                className="sm:p-5 lg:p-6"
               >
                 <div
                   style={{
                     display: 'flex',
                     alignItems: 'flex-start',
-                    gap: '16px',
+                    gap: '12px',
                   }}
+                  className="sm:gap-4"
                 >
                   <div
                     className="gradient-bg"
                     style={{
                       flexShrink: 0,
-                      width: '48px',
-                      height: '48px',
+                      width: '40px',
+                      height: '40px',
                       borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                     }}
                   >
-                    <service.icon style={{ height: '20px', width: '20px', color: '#ffffff' }} />
+                    <service.icon style={{ height: '18px', width: '18px', color: '#ffffff' }} className="sm:h-5 sm:w-5" />
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <h3
                       style={{
                         color: '#ffffff',
-                        fontSize: '18px',
+                        fontSize: '16px',
                         fontWeight: 700,
-                        marginBottom: '8px',
+                        marginBottom: '6px',
                       }}
+                      className="sm:text-lg"
                     >
                       {service.title}
                     </h3>
                     <p
                       style={{
                         color: 'rgba(255, 255, 255, 0.5)',
-                        fontSize: '14px',
+                        fontSize: '13px',
                         lineHeight: 1.6,
                       }}
+                      className="sm:text-sm"
                     >
                       {service.description}
                     </p>

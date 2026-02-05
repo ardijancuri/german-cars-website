@@ -62,10 +62,10 @@ export default function Testimonials() {
               textTransform: 'uppercase',
               letterSpacing: '0.05em',
               marginBottom: '24px',
+              color: '#ffffff',
             }}
           >
-            <span style={{ color: '#ffffff' }}>Was unsere </span>
-            <span>Kunden sagen</span>
+            Was unsere Kunden sagen
           </h2>
           <p
             style={{
@@ -108,10 +108,10 @@ export default function Testimonials() {
                   style={{
                     backgroundColor: '#161616',
                     borderRadius: '12px',
-                    padding: '24px',
+                    padding: '20px',
                     height: '100%',
                   }}
-                  className="lg:p-8"
+                  className="sm:p-6 lg:p-8"
                 >
                   {/* Quote Icon */}
                   <Quote

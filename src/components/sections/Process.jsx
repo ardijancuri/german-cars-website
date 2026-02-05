@@ -38,11 +38,12 @@ export default function Process() {
   return (
     <section
       style={{
-        padding: '80px 0',
+        paddingTop: '80px',
+        paddingBottom: '120px',
         backgroundColor: '#000000',
         overflow: 'hidden',
       }}
-      className="lg:py-28"
+      className="lg:pt-28 lg:pb-40"
     >
       {/* Section Header */}
       <div
@@ -71,10 +72,10 @@ export default function Process() {
               textTransform: 'uppercase',
               letterSpacing: '0.05em',
               marginBottom: '24px',
+              color: '#ffffff',
             }}
           >
-            <span style={{ color: '#ffffff' }}>Ihr Weg zum </span>
-            <span>Epic Car</span>
+            Ihr Weg zum Epic Car
           </h2>
           <p
             style={{
@@ -116,7 +117,7 @@ export default function Process() {
                 backgroundColor: 'rgba(22, 22, 22, 0.6)',
                 borderRadius: '12px',
                 padding: '24px',
-                border: '1px solid rgba(255, 255, 255, 0.15)',
+                border: 'none',
                 position: 'relative',
                 overflow: 'hidden',
                 transition: 'all 0.3s ease',
@@ -124,12 +125,10 @@ export default function Process() {
               className="lg:p-6"
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'rgba(22, 22, 22, 0.9)'
-                e.currentTarget.style.borderColor = 'rgba(229, 75, 30, 0.5)'
                 e.currentTarget.style.transform = 'translateY(-4px)'
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = 'rgba(22, 22, 22, 0.6)'
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.15)'
                 e.currentTarget.style.transform = 'translateY(0)'
               }}
             >
@@ -137,11 +136,12 @@ export default function Process() {
               <div
                 style={{
                   position: 'absolute',
-                  top: '-15px',
-                  right: '-5px',
-                  fontSize: '100px',
+                  top: '10px',
+                  right: '10px',
+                  fontSize: 'clamp(70px, 18vw, 100px)',
                   fontWeight: 900,
-                  color: 'rgba(229, 75, 30, 0.15)',
+                  fontFamily: 'Orbitron, sans-serif',
+                  color: 'rgba(255, 255, 255, 0.15)',
                   lineHeight: 1,
                   userSelect: 'none',
                 }}
@@ -152,20 +152,21 @@ export default function Process() {
 
               {/* Icon */}
               <div
-                className="gradient-bg"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  width: '56px',
-                  height: '56px',
-                  borderRadius: '12px',
-                  marginBottom: '16px',
+                  width: '48px',
+                  height: '48px',
+                  borderRadius: '10px',
+                  marginBottom: '14px',
                   position: 'relative',
                   zIndex: 1,
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
                 }}
               >
-                <step.icon style={{ height: '24px', width: '24px', color: '#ffffff' }} />
+                <step.icon style={{ height: '22px', width: '22px', color: '#ffffff' }} />
               </div>
 
               {/* Content */}

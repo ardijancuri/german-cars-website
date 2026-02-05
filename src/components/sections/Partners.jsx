@@ -84,9 +84,10 @@ export default function Partners() {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '64px',
-            padding: '0 32px',
+            gap: '40px',
+            padding: '0 24px',
           }}
+          className="sm:gap-16 sm:px-8"
         >
           {[...partners, ...partners].map((partner, index) => (
             <div

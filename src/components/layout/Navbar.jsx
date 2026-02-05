@@ -215,12 +215,35 @@ export default function Navbar() {
                 zIndex: 40,
               }}
             >
+              {/* Close button */}
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                style={{
+                  position: 'absolute',
+                  top: '16px',
+                  right: '24px',
+                  width: '44px',
+                  height: '44px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: '#ffffff',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  zIndex: 50,
+                }}
+                aria-label="Close menu"
+              >
+                <X style={{ height: '28px', width: '28px' }} />
+              </button>
+
               <div
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
                   height: '100%',
-                  paddingTop: '96px',
+                  paddingTop: '80px',
                   paddingLeft: '24px',
                   paddingRight: '24px',
                   paddingBottom: '32px',

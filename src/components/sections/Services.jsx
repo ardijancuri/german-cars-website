@@ -65,10 +65,10 @@ export default function Services() {
               textTransform: 'uppercase',
               letterSpacing: '0.05em',
               marginBottom: '24px',
+              color: '#ffffff',
             }}
           >
-            <span style={{ color: '#ffffff' }}>Unsere </span>
-            <span>Services</span>
+            Unsere Services
           </h2>
           <p
             style={{
@@ -88,10 +88,9 @@ export default function Services() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
             gap: '16px',
           }}
-          className="lg:gap-6"
+          className="grid-cols-1 sm:grid-cols-2 lg:gap-6"
         >
           {services.map((service, index) => (
             <motion.div
@@ -107,7 +106,7 @@ export default function Services() {
                 style={{
                   display: 'block',
                   position: 'relative',
-                  aspectRatio: '16/9',
+                  aspectRatio: '4/3',
                   borderRadius: '12px',
                   overflow: 'hidden',
                   backgroundColor: '#161616',
@@ -136,8 +135,9 @@ export default function Services() {
                     position: 'absolute',
                     top: '10px',
                     right: '15px',
-                    fontSize: '100px',
+                    fontSize: 'clamp(60px, 15vw, 100px)',
                     fontWeight: 900,
+                    fontFamily: 'Orbitron, sans-serif',
                     color: 'rgba(255, 255, 255, 0.5)',
                     lineHeight: 1,
                     userSelect: 'none',
@@ -156,14 +156,14 @@ export default function Services() {
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'flex-end',
-                    padding: '20px',
+                    padding: '16px',
                   }}
-                  className="lg:p-6"
+                  className="sm:p-5 lg:p-6"
                 >
                   <h3
                     style={{
                       color: '#ffffff',
-                      fontSize: '20px',
+                      fontSize: 'clamp(16px, 4vw, 20px)',
                       fontWeight: 700,
                       marginBottom: '8px',
                       transition: 'color 0.3s ease',
@@ -173,7 +173,7 @@ export default function Services() {
                     {service.title}
                   </h3>
                   <p
-                    className="line-clamp-2"
+                    className="line-clamp-2 hidden sm:block"
                     style={{
                       color: 'rgba(255, 255, 255, 0.6)',
                       fontSize: '14px',
@@ -184,8 +184,8 @@ export default function Services() {
                     {service.description}
                   </p>
                   <div
+                    className="hidden sm:flex"
                     style={{
-                      display: 'flex',
                       alignItems: 'center',
                       color: '#E54B1E',
                       fontSize: '14px',

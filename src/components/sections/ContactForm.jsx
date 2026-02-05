@@ -121,36 +121,37 @@ export default function ContactForm() {
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em',
                 marginBottom: '16px',
+                color: '#ffffff',
               }}
             >
-              <span style={{ color: '#ffffff' }}>Jetzt </span>
-              <span>Kontakt aufnehmen</span>
+              Jetzt Kontakt aufnehmen
             </h2>
             <p
               style={{
                 color: '#FFFFFF',
-                fontSize: '16px',
+                fontSize: '15px',
                 lineHeight: 1.7,
-                marginBottom: '40px',
+                marginBottom: '32px',
               }}
-              className="lg:text-lg"
+              className="sm:text-base sm:mb-10 lg:text-lg"
             >
               Haben Sie Fragen oder möchten Sie ein Angebot anfordern? Wir freuen uns auf Ihre Nachricht.
             </p>
 
             {/* Contact Details - Card-based Layout */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }} className="sm:gap-4">
               <div
                 style={{
                   backgroundColor: 'rgba(0, 0, 0, 0.4)',
                   borderRadius: '12px',
-                  padding: '20px',
+                  padding: '16px',
                   border: '1px solid rgba(255, 255, 255, 0.05)',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '16px',
+                  gap: '12px',
                   transition: 'all 0.3s ease',
                 }}
+                className="sm:p-5 sm:gap-4"
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.6)'
                   e.currentTarget.style.borderColor = 'rgba(229, 75, 30, 0.3)'
@@ -163,16 +164,16 @@ export default function ContactForm() {
                 <div
                   className="gradient-bg"
                   style={{
-                    width: '56px',
-                    height: '56px',
-                    borderRadius: '12px',
+                    width: '48px',
+                    height: '48px',
+                    borderRadius: '10px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     flexShrink: 0,
                   }}
                 >
-                  <Phone style={{ height: '24px', width: '24px', color: '#ffffff' }} />
+                  <Phone style={{ height: '20px', width: '20px', color: '#ffffff' }} />
                 </div>
                 <div style={{ flex: 1 }}>
                   <h4 style={{ color: '#ffffff', fontWeight: 600, marginBottom: '4px', fontSize: '15px' }}>Telefon</h4>
@@ -196,13 +197,14 @@ export default function ContactForm() {
                 style={{
                   backgroundColor: 'rgba(0, 0, 0, 0.4)',
                   borderRadius: '12px',
-                  padding: '20px',
+                  padding: '16px',
                   border: '1px solid rgba(255, 255, 255, 0.05)',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '16px',
+                  gap: '12px',
                   transition: 'all 0.3s ease',
                 }}
+                className="sm:p-5 sm:gap-4"
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.6)'
                   e.currentTarget.style.borderColor = 'rgba(229, 75, 30, 0.3)'
@@ -215,16 +217,16 @@ export default function ContactForm() {
                 <div
                   className="gradient-bg"
                   style={{
-                    width: '56px',
-                    height: '56px',
-                    borderRadius: '12px',
+                    width: '48px',
+                    height: '48px',
+                    borderRadius: '10px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     flexShrink: 0,
                   }}
                 >
-                  <Mail style={{ height: '24px', width: '24px', color: '#ffffff' }} />
+                  <Mail style={{ height: '20px', width: '20px', color: '#ffffff' }} />
                 </div>
                 <div style={{ flex: 1 }}>
                   <h4 style={{ color: '#ffffff', fontWeight: 600, marginBottom: '4px', fontSize: '15px' }}>E-Mail</h4>
@@ -248,13 +250,14 @@ export default function ContactForm() {
                 style={{
                   backgroundColor: 'rgba(0, 0, 0, 0.4)',
                   borderRadius: '12px',
-                  padding: '20px',
+                  padding: '16px',
                   border: '1px solid rgba(255, 255, 255, 0.05)',
                   display: 'flex',
                   alignItems: 'flex-start',
-                  gap: '16px',
+                  gap: '12px',
                   transition: 'all 0.3s ease',
                 }}
+                className="sm:p-5 sm:gap-4"
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.6)'
                   e.currentTarget.style.borderColor = 'rgba(229, 75, 30, 0.3)'
@@ -267,16 +270,16 @@ export default function ContactForm() {
                 <div
                   className="gradient-bg"
                   style={{
-                    width: '56px',
-                    height: '56px',
-                    borderRadius: '12px',
+                    width: '48px',
+                    height: '48px',
+                    borderRadius: '10px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     flexShrink: 0,
                   }}
                 >
-                  <MapPin style={{ height: '24px', width: '24px', color: '#ffffff' }} />
+                  <MapPin style={{ height: '20px', width: '20px', color: '#ffffff' }} />
                 </div>
                 <div style={{ flex: 1 }}>
                   <h4 style={{ color: '#ffffff', fontWeight: 600, marginBottom: '6px', fontSize: '15px' }}>Adresse</h4>
@@ -442,9 +445,9 @@ export default function ContactForm() {
                       type="button"
                       onClick={() => handleServiceChange(service)}
                       style={{
-                        padding: '10px 16px',
+                        padding: '8px 12px',
                         borderRadius: '9999px',
-                        fontSize: '14px',
+                        fontSize: '13px',
                         fontWeight: 500,
                         transition: 'all 0.2s ease',
                         cursor: 'pointer',
@@ -454,6 +457,7 @@ export default function ContactForm() {
                           : 'rgba(0, 0, 0, 0.5)',
                         color: formData.services.includes(service) ? '#ffffff' : 'rgba(255, 255, 255, 0.6)',
                       }}
+                      className="sm:px-4 sm:py-2.5 sm:text-sm"
                     >
                       {service}
                     </button>
