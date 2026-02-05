@@ -23,38 +23,98 @@ export default function WindowTinting() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
+      <section
+        style={{
+          position: 'relative',
+          padding: '80px 0',
+          overflow: 'hidden',
+        }}
+        className="lg:py-28"
+      >
         <div className="absolute inset-0">
           <img
             src="/images/gallery-4.jpg"
             alt="Scheibentönung"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-black via-primary-black/80 to-transparent" />
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(to right, #000000, rgba(0,0,0,0.8), transparent)',
+            }}
+          />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '0 24px',
+            position: 'relative',
+          }}
+        >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-2xl"
+            style={{ maxWidth: '672px' }}
           >
-            <div className="flex items-center space-x-2 mb-4">
-              <Sun className="h-6 w-6 text-accent-orange" />
-              <span className="text-accent-orange font-semibold uppercase tracking-wider">Scheibentönung</span>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                marginBottom: '24px',
+              }}
+            >
+              <div
+                className="gradient-bg"
+                style={{
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <Sun style={{ height: '20px', width: '20px', color: '#ffffff' }} />
+              </div>
+              <span
+                style={{
+                  color: '#E54B1E',
+                  fontWeight: 600,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                }}
+              >
+                Scheibentönung
+              </span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase mb-6">
-              <span className="text-text-primary">Professionelle </span>
+            <h1
+              style={{
+                fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+                fontWeight: 900,
+                textTransform: 'uppercase',
+                marginBottom: '24px',
+                lineHeight: 1.1,
+              }}
+            >
+              <span style={{ color: '#ffffff' }}>Professionelle </span>
               <span className="gradient-text">Scheibentönung</span>
             </h1>
-            <p className="text-text-secondary text-lg leading-relaxed mb-8">
+            <p
+              style={{
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontSize: '18px',
+                lineHeight: 1.7,
+                marginBottom: '32px',
+              }}
+            >
               Mehr Privatsphäre, weniger Hitze und ein eleganter Look. Unsere hochwertigen
               Tönungsfolien bieten optimalen Schutz und erfüllen alle gesetzlichen Anforderungen.
             </p>
-            <Link
-              to="/kontakt"
-              className="inline-block gradient-border px-8 py-4 rounded-full text-text-primary font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity duration-200"
-            >
+            <Link to="/kontakt" className="btn-primary">
               Angebot anfordern
             </Link>
           </motion.div>
@@ -62,20 +122,42 @@ export default function WindowTinting() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 lg:py-32 bg-primary-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section
+        style={{
+          padding: '80px 0',
+          backgroundColor: '#161616',
+        }}
+        className="lg:py-28"
+      >
+        <div
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '0 24px',
+          }}
+        >
+          <div
+            style={{ gap: '16px' }}
+            className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6 items-center"
+          >
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl sm:text-4xl font-black uppercase mb-6">
-                <span className="text-text-primary">Ihre </span>
+              <h2
+                style={{
+                  fontSize: 'clamp(1.5rem, 4vw, 2.25rem)',
+                  fontWeight: 900,
+                  textTransform: 'uppercase',
+                  marginBottom: '24px',
+                }}
+              >
+                <span style={{ color: '#ffffff' }}>Ihre </span>
                 <span className="gradient-text">Vorteile</span>
               </h2>
-              <ul className="space-y-4">
+              <ul style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {benefits.map((benefit, index) => (
                   <motion.li
                     key={benefit}
@@ -83,10 +165,14 @@ export default function WindowTinting() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="flex items-start space-x-3"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: '12px',
+                    }}
                   >
-                    <CheckCircle className="h-6 w-6 text-accent-orange flex-shrink-0 mt-0.5" />
-                    <span className="text-text-secondary">{benefit}</span>
+                    <CheckCircle style={{ height: '24px', width: '24px', color: '#E54B1E', flexShrink: 0, marginTop: '2px' }} />
+                    <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>{benefit}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -96,12 +182,33 @@ export default function WindowTinting() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="relative aspect-video rounded-2xl overflow-hidden"
+              className="group"
+              style={{
+                position: 'relative',
+                aspectRatio: '16/9',
+                borderRadius: '12px',
+                overflow: 'hidden',
+              }}
             >
               <img
                 src="/images/gallery-10.jpg"
                 alt="Scheibentönung Beispiel"
-                className="w-full h-full object-cover"
+                className="img-zoom"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                }}
+              />
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(to top, rgba(0,0,0,0.3), transparent)',
+                  opacity: 0,
+                  transition: 'opacity 0.5s ease',
+                }}
+                className="group-hover:opacity-100"
               />
             </motion.div>
           </div>
@@ -109,25 +216,62 @@ export default function WindowTinting() {
       </section>
 
       {/* Tint Levels Section */}
-      <section className="py-20 lg:py-32 bg-primary-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        style={{
+          padding: '80px 0',
+          backgroundColor: '#000000',
+        }}
+        className="lg:py-28"
+      >
+        <div
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '0 24px',
+          }}
+        >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            style={{
+              textAlign: 'center',
+              marginBottom: '56px',
+            }}
+            className="lg:mb-20"
           >
-            <h2 className="text-3xl sm:text-4xl font-black uppercase mb-4">
-              <span className="text-text-primary">Tönungsgrade </span>
-              <span className="gradient-text">& Optionen</span>
+            <h2
+              className="headline-decorated"
+              style={{
+                fontSize: 'clamp(1.5rem, 4vw, 2.25rem)',
+                fontWeight: 900,
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                marginBottom: '24px',
+                color: '#ffffff',
+              }}
+            >
+              Tönungsgrade & Optionen
             </h2>
-            <p className="text-text-secondary max-w-2xl mx-auto">
+            <p
+              style={{
+                color: 'rgba(255, 255, 255, 0.7)',
+                maxWidth: '576px',
+                margin: '0 auto',
+                fontSize: '16px',
+                lineHeight: 1.7,
+              }}
+              className="lg:text-lg"
+            >
               Von dezent bis dunkel - wählen Sie den passenden Tönungsgrad für Ihr Fahrzeug.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div
+            style={{ gap: '16px' }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6"
+          >
             {tintLevels.map((level, index) => (
               <motion.div
                 key={level.name}
@@ -135,17 +279,49 @@ export default function WindowTinting() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-primary-dark rounded-2xl p-6 border border-primary-gray/30 text-center"
+                style={{
+                  backgroundColor: 'rgba(22, 22, 22, 0.6)',
+                  borderRadius: '12px',
+                  padding: '24px',
+                  textAlign: 'center',
+                  transition: 'all 0.3s ease',
+                }}
+                className="sm:p-5 lg:p-6"
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(22, 22, 22, 0.9)'
+                  e.currentTarget.style.transform = 'translateY(-4px) scale(1.02)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(22, 22, 22, 0.6)'
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)'
+                }}
               >
                 <div
-                  className="w-16 h-16 mx-auto mb-4 rounded-full border-4 border-accent-orange"
                   style={{
+                    width: '64px',
+                    height: '64px',
+                    margin: '0 auto 16px',
+                    borderRadius: '50%',
+                    border: '4px solid #E54B1E',
                     backgroundColor: `rgba(0, 0, 0, ${1 - parseInt(level.name) / 100})`,
                   }}
                 />
-                <h3 className="text-2xl font-bold text-text-primary mb-1">{level.name}</h3>
-                <p className="text-accent-orange text-sm mb-2">{level.description}</p>
-                <p className="text-text-secondary text-xs">{level.legal}</p>
+                <h3
+                  style={{
+                    fontSize: '24px',
+                    fontWeight: 700,
+                    color: '#ffffff',
+                    marginBottom: '4px',
+                  }}
+                >
+                  {level.name}
+                </h3>
+                <p style={{ color: '#E54B1E', fontSize: '14px', marginBottom: '8px' }}>
+                  {level.description}
+                </p>
+                <p style={{ color: 'rgba(255, 255, 255, 0.5)', fontSize: '12px' }}>
+                  {level.legal}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -153,17 +329,50 @@ export default function WindowTinting() {
       </section>
 
       {/* Legal Info */}
-      <section className="py-16 bg-primary-dark">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        style={{
+          padding: '64px 0',
+          backgroundColor: '#161616',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '0 24px',
+          }}
+        >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-primary-black rounded-2xl p-8 border border-primary-gray/30"
+            style={{
+              backgroundColor: 'rgba(0, 0, 0, 0.4)',
+              borderRadius: '12px',
+              padding: '32px',
+              transition: 'all 0.3s ease',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.6)'
+              e.currentTarget.style.transform = 'translateY(-4px)'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.4)'
+              e.currentTarget.style.transform = 'translateY(0)'
+            }}
           >
-            <h3 className="text-xl font-bold text-text-primary mb-4">Rechtliche Hinweise</h3>
-            <p className="text-text-secondary leading-relaxed">
+            <h3
+              style={{
+                fontSize: '20px',
+                fontWeight: 700,
+                color: '#ffffff',
+                marginBottom: '16px',
+              }}
+            >
+              Rechtliche Hinweise
+            </h3>
+            <p style={{ color: 'rgba(255, 255, 255, 0.6)', lineHeight: 1.7 }}>
               In Deutschland gelten strenge Vorschriften für die Scheibentönung. Die Frontscheibe und
               die vorderen Seitenscheiben müssen eine Lichtdurchlässigkeit von mindestens 70% aufweisen.
               Wir beraten Sie gerne zu den gesetzlichen Möglichkeiten und sorgen für eine fachgerechte
@@ -174,25 +383,51 @@ export default function WindowTinting() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary-black">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section
+        style={{
+          padding: '80px 0',
+          backgroundColor: '#000000',
+        }}
+        className="lg:py-28"
+      >
+        <div
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '0 24px',
+            textAlign: 'center',
+          }}
+        >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl sm:text-4xl font-black uppercase mb-6">
-              <span className="text-text-primary">Interesse </span>
-              <span className="gradient-text">geweckt?</span>
+            <h2
+              className="headline-decorated"
+              style={{
+                fontSize: 'clamp(1.5rem, 4vw, 2.25rem)',
+                fontWeight: 900,
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                marginBottom: '24px',
+                color: '#ffffff',
+              }}
+            >
+              Interesse geweckt?
             </h2>
-            <p className="text-text-secondary text-lg mb-8">
+            <p
+              style={{
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontSize: '18px',
+                marginBottom: '32px',
+              }}
+              className="lg:text-lg"
+            >
               Kontaktieren Sie uns für eine kostenlose Beratung und ein individuelles Angebot.
             </p>
-            <Link
-              to="/kontakt"
-              className="inline-block gradient-border px-8 py-4 rounded-full text-text-primary font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity duration-200"
-            >
+            <Link to="/kontakt" className="btn-primary">
               Jetzt anfragen
             </Link>
           </motion.div>

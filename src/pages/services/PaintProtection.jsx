@@ -33,38 +33,98 @@ export default function PaintProtection() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
+      <section
+        style={{
+          position: 'relative',
+          padding: '80px 0',
+          overflow: 'hidden',
+        }}
+        className="lg:py-28"
+      >
         <div className="absolute inset-0">
           <img
             src="/images/gallery-1.jpg"
             alt="Lackschutzfolie"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-black via-primary-black/80 to-transparent" />
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(to right, #000000, rgba(0,0,0,0.8), transparent)',
+            }}
+          />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '0 24px',
+            position: 'relative',
+          }}
+        >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-2xl"
+            style={{ maxWidth: '672px' }}
           >
-            <div className="flex items-center space-x-2 mb-4">
-              <Shield className="h-6 w-6 text-accent-orange" />
-              <span className="text-accent-orange font-semibold uppercase tracking-wider">Lackschutz</span>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                marginBottom: '24px',
+              }}
+            >
+              <div
+                className="gradient-bg"
+                style={{
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <Shield style={{ height: '20px', width: '20px', color: '#ffffff' }} />
+              </div>
+              <span
+                style={{
+                  color: '#E54B1E',
+                  fontWeight: 600,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                }}
+              >
+                Lackschutz
+              </span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase mb-6">
-              <span className="text-text-primary">XPEL PPF </span>
+            <h1
+              style={{
+                fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+                fontWeight: 900,
+                textTransform: 'uppercase',
+                marginBottom: '24px',
+                lineHeight: 1.1,
+              }}
+            >
+              <span style={{ color: '#ffffff' }}>XPEL PPF </span>
               <span className="gradient-text">Lackschutzfolie</span>
             </h1>
-            <p className="text-text-secondary text-lg leading-relaxed mb-8">
+            <p
+              style={{
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontSize: '18px',
+                lineHeight: 1.7,
+                marginBottom: '32px',
+              }}
+            >
               Schützen Sie Ihren Lack mit der weltweit führenden Lackschutzfolie. XPEL PPF bietet
               unsichtbaren Schutz vor Steinschlägen, Kratzern und Umwelteinflüssen.
             </p>
-            <Link
-              to="/kontakt"
-              className="inline-block gradient-border px-8 py-4 rounded-full text-text-primary font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity duration-200"
-            >
+            <Link to="/kontakt" className="btn-primary">
               Angebot anfordern
             </Link>
           </motion.div>
@@ -72,20 +132,42 @@ export default function PaintProtection() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 lg:py-32 bg-primary-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section
+        style={{
+          padding: '80px 0',
+          backgroundColor: '#161616',
+        }}
+        className="lg:py-28"
+      >
+        <div
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '0 24px',
+          }}
+        >
+          <div
+            style={{ gap: '16px' }}
+            className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6 items-center"
+          >
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl sm:text-4xl font-black uppercase mb-6">
-                <span className="text-text-primary">Ihre </span>
+              <h2
+                style={{
+                  fontSize: 'clamp(1.5rem, 4vw, 2.25rem)',
+                  fontWeight: 900,
+                  textTransform: 'uppercase',
+                  marginBottom: '24px',
+                }}
+              >
+                <span style={{ color: '#ffffff' }}>Ihre </span>
                 <span className="gradient-text">Vorteile</span>
               </h2>
-              <ul className="space-y-4">
+              <ul style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {benefits.map((benefit, index) => (
                   <motion.li
                     key={benefit}
@@ -93,10 +175,14 @@ export default function PaintProtection() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="flex items-start space-x-3"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: '12px',
+                    }}
                   >
-                    <CheckCircle className="h-6 w-6 text-accent-orange flex-shrink-0 mt-0.5" />
-                    <span className="text-text-secondary">{benefit}</span>
+                    <CheckCircle style={{ height: '24px', width: '24px', color: '#E54B1E', flexShrink: 0, marginTop: '2px' }} />
+                    <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>{benefit}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -106,12 +192,33 @@ export default function PaintProtection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="relative aspect-video rounded-2xl overflow-hidden"
+              className="group"
+              style={{
+                position: 'relative',
+                aspectRatio: '16/9',
+                borderRadius: '12px',
+                overflow: 'hidden',
+              }}
             >
               <img
                 src="/images/epic-cars-folierung-3.jpg"
                 alt="PPF Anwendung"
-                className="w-full h-full object-cover"
+                className="img-zoom"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                }}
+              />
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(to top, rgba(0,0,0,0.3), transparent)',
+                  opacity: 0,
+                  transition: 'opacity 0.5s ease',
+                }}
+                className="group-hover:opacity-100"
               />
             </motion.div>
           </div>
@@ -119,25 +226,62 @@ export default function PaintProtection() {
       </section>
 
       {/* Packages Section */}
-      <section className="py-20 lg:py-32 bg-primary-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        style={{
+          padding: '80px 0',
+          backgroundColor: '#000000',
+        }}
+        className="lg:py-28"
+      >
+        <div
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '0 24px',
+          }}
+        >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            style={{
+              textAlign: 'center',
+              marginBottom: '56px',
+            }}
+            className="lg:mb-20"
           >
-            <h2 className="text-3xl sm:text-4xl font-black uppercase mb-4">
-              <span className="text-text-primary">Unsere </span>
-              <span className="gradient-text">Pakete</span>
+            <h2
+              className="headline-decorated"
+              style={{
+                fontSize: 'clamp(1.5rem, 4vw, 2.25rem)',
+                fontWeight: 900,
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                marginBottom: '24px',
+                color: '#ffffff',
+              }}
+            >
+              Unsere Pakete
             </h2>
-            <p className="text-text-secondary max-w-2xl mx-auto">
+            <p
+              style={{
+                color: 'rgba(255, 255, 255, 0.7)',
+                maxWidth: '576px',
+                margin: '0 auto',
+                fontSize: '16px',
+                lineHeight: 1.7,
+              }}
+              className="lg:text-lg"
+            >
               Wählen Sie das passende Schutzpaket für Ihr Fahrzeug.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            style={{ gap: '16px' }}
+            className="grid grid-cols-1 md:grid-cols-3 lg:gap-6"
+          >
             {packages.map((pkg, index) => (
               <motion.div
                 key={pkg.name}
@@ -145,24 +289,66 @@ export default function PaintProtection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-primary-dark rounded-2xl p-8 border border-primary-gray/30 hover:border-accent-orange/50 transition-colors duration-300"
+                style={{
+                  backgroundColor: 'rgba(22, 22, 22, 0.6)',
+                  borderRadius: '12px',
+                  padding: '24px',
+                  transition: 'all 0.3s ease',
+                }}
+                className="sm:p-5 lg:p-6"
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(22, 22, 22, 0.9)'
+                  e.currentTarget.style.transform = 'translateY(-4px)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(22, 22, 22, 0.6)'
+                  e.currentTarget.style.transform = 'translateY(0)'
+                }}
               >
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-text-primary mb-2">{pkg.name}</h3>
-                  <p className="text-accent-orange">{pkg.description}</p>
+                <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+                  <div
+                    className="gradient-bg"
+                    style={{
+                      width: '48px',
+                      height: '48px',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      margin: '0 auto 16px',
+                    }}
+                  >
+                    <Award style={{ height: '24px', width: '24px', color: '#ffffff' }} />
+                  </div>
+                  <h3
+                    style={{
+                      fontSize: '24px',
+                      fontWeight: 700,
+                      color: '#ffffff',
+                      marginBottom: '8px',
+                    }}
+                  >
+                    {pkg.name}
+                  </h3>
+                  <p style={{ color: '#E54B1E' }}>{pkg.description}</p>
                 </div>
-                <ul className="space-y-3 mb-8">
+                <ul style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
                   {pkg.features.map((feature) => (
-                    <li key={feature} className="flex items-center space-x-2 text-text-secondary">
-                      <CheckCircle className="h-4 w-4 text-accent-orange" />
+                    <li
+                      key={feature}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        color: 'rgba(255, 255, 255, 0.6)',
+                      }}
+                    >
+                      <CheckCircle style={{ height: '16px', width: '16px', color: '#E54B1E' }} />
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
-                <Link
-                  to="/kontakt"
-                  className="block w-full text-center border border-accent-orange px-6 py-3 rounded-full text-accent-orange font-semibold hover:bg-accent-orange hover:text-white transition-colors duration-200"
-                >
+                <Link to="/kontakt" className="btn-secondary w-full justify-center">
                   Anfragen
                 </Link>
               </motion.div>
@@ -172,22 +358,115 @@ export default function PaintProtection() {
       </section>
 
       {/* XPEL Certification */}
-      <section className="py-16 bg-primary-dark">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        style={{
+          padding: '64px 0',
+          backgroundColor: '#161616',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '0 24px',
+          }}
+        >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 text-center md:text-left"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '16px',
+              textAlign: 'center',
+            }}
+            className="md:flex-row md:text-left md:gap-8"
           >
-            <Award className="h-16 w-16 text-accent-orange" />
+            <div
+              className="gradient-bg"
+              style={{
+                width: '64px',
+                height: '64px',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0,
+              }}
+            >
+              <Award style={{ height: '32px', width: '32px', color: '#ffffff' }} />
+            </div>
             <div>
-              <h3 className="text-xl font-bold text-text-primary mb-2">XPEL Zertifizierter Installateur</h3>
-              <p className="text-text-secondary">
+              <h3
+                style={{
+                  fontSize: '20px',
+                  fontWeight: 700,
+                  color: '#ffffff',
+                  marginBottom: '8px',
+                }}
+              >
+                XPEL Zertifizierter Installateur
+              </h3>
+              <p style={{ color: 'rgba(255, 255, 255, 0.6)' }}>
                 Als zertifizierter XPEL-Partner garantieren wir höchste Qualität und professionelle Installation.
               </p>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section
+        style={{
+          padding: '80px 0',
+          backgroundColor: '#000000',
+        }}
+        className="lg:py-28"
+      >
+        <div
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '0 24px',
+            textAlign: 'center',
+          }}
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2
+              className="headline-decorated"
+              style={{
+                fontSize: 'clamp(1.5rem, 4vw, 2.25rem)',
+                fontWeight: 900,
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                marginBottom: '24px',
+                color: '#ffffff',
+              }}
+            >
+              Bereit für maximalen Schutz?
+            </h2>
+            <p
+              style={{
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontSize: '18px',
+                marginBottom: '32px',
+              }}
+              className="lg:text-lg"
+            >
+              Kontaktieren Sie uns für eine kostenlose Beratung und ein individuelles Angebot.
+            </p>
+            <Link to="/kontakt" className="btn-primary">
+              Jetzt anfragen
+            </Link>
           </motion.div>
         </div>
       </section>

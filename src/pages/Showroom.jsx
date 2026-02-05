@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import Gallery from '../components/sections/Gallery'
+import { Link } from 'react-router-dom'
+import { Camera } from 'lucide-react'
 
 const showroomImages = [
   { src: '/images/gallery-1.jpg', title: 'Porsche 911 GT3', service: 'Lackschutzfolie' },
@@ -18,30 +19,181 @@ export default function Showroom() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-primary-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        style={{
+          position: 'relative',
+          padding: '80px 0',
+          overflow: 'hidden',
+        }}
+        className="lg:py-28"
+      >
+        <div className="absolute inset-0">
+          <img
+            src="/images/gallery-1.jpg"
+            alt="Epic Cars Showroom"
+            className="w-full h-full object-cover"
+            style={{ opacity: 0.2 }}
+          />
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8), #000000)',
+            }}
+          />
+        </div>
+        <div
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '0 24px',
+            position: 'relative',
+          }}
+        >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center"
+            style={{ textAlign: 'center' }}
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase mb-6">
-              <span className="text-text-primary">Unser </span>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '12px',
+                marginBottom: '24px',
+              }}
+            >
+              <div
+                className="gradient-bg"
+                style={{
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <Camera style={{ height: '20px', width: '20px', color: '#ffffff' }} />
+              </div>
+              <span
+                style={{
+                  color: '#E54B1E',
+                  fontWeight: 600,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                }}
+              >
+                Galerie
+              </span>
+            </div>
+            <h1
+              style={{
+                fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+                fontWeight: 900,
+                textTransform: 'uppercase',
+                marginBottom: '24px',
+                lineHeight: 1.1,
+              }}
+            >
+              <span style={{ color: '#ffffff' }}>Unser </span>
               <span className="gradient-text">Showroom</span>
             </h1>
-            <p className="text-text-secondary text-lg max-w-3xl mx-auto">
+            <p
+              style={{
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontSize: '18px',
+                maxWidth: '768px',
+                margin: '0 auto 32px',
+                lineHeight: 1.7,
+              }}
+            >
               Entdecken Sie unsere Arbeiten und lassen Sie sich von den Fahrzeugen inspirieren,
               die wir veredelt haben. Jedes Projekt ist ein Unikat.
             </p>
+            {/* Mini stats */}
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '32px' }}>
+              <div style={{ textAlign: 'center' }}>
+                <div
+                  className="gradient-text"
+                  style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 900 }}
+                >
+                  500+
+                </div>
+                <div style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '14px' }}>Projekte</div>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <div
+                  className="gradient-text"
+                  style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 900 }}
+                >
+                  10+
+                </div>
+                <div style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '14px' }}>Jahre</div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-16 bg-primary-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section
+        style={{
+          padding: '64px 0',
+          backgroundColor: '#161616',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '0 24px',
+          }}
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            style={{
+              textAlign: 'center',
+              marginBottom: '56px',
+            }}
+            className="lg:mb-20"
+          >
+            <h2
+              className="headline-decorated"
+              style={{
+                fontSize: 'clamp(1.5rem, 4vw, 2.25rem)',
+                fontWeight: 900,
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                marginBottom: '16px',
+                color: '#ffffff',
+              }}
+            >
+              <span style={{ color: '#ffffff' }}>Unsere </span>
+              <span className="gradient-text">Arbeiten</span>
+            </h2>
+            <p
+              style={{
+                color: 'rgba(255, 255, 255, 0.7)',
+                maxWidth: '576px',
+                margin: '0 auto',
+                fontSize: '16px',
+                lineHeight: 1.7,
+              }}
+              className="lg:text-lg"
+            >
+              Entdecken Sie die Vielfalt unserer Projekte - von Lackschutz bis Car Wrapping.
+            </p>
+          </motion.div>
+          <div
+            style={{ gap: '16px' }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6"
+          >
             {showroomImages.map((item, index) => (
               <motion.div
                 key={index}
@@ -49,17 +201,81 @@ export default function Showroom() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer"
+                className="group"
+                style={{
+                  position: 'relative',
+                  aspectRatio: '4/3',
+                  borderRadius: '12px',
+                  overflow: 'hidden',
+                  cursor: 'pointer',
+                  transition: 'transform 0.3s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)'
+                }}
               >
                 <img
                   src={item.src}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="img-zoom"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-black/90 via-primary-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-text-primary font-bold text-lg">{item.title}</h3>
-                  <p className="text-accent-orange text-sm">{item.service}</p>
+                {/* Service badge - always visible */}
+                <div style={{ position: 'absolute', top: '16px', left: '16px', zIndex: 10 }}>
+                  <span
+                    className="gradient-bg"
+                    style={{
+                      padding: '4px 12px',
+                      borderRadius: '9999px',
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      color: '#ffffff',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em',
+                    }}
+                  >
+                    {item.service}
+                  </span>
+                </div>
+                <div
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2), transparent)',
+                    opacity: 0.6,
+                    transition: 'opacity 0.3s ease',
+                  }}
+                  className="group-hover:opacity-100"
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    padding: '24px',
+                    transform: 'translateY(8px)',
+                    transition: 'transform 0.3s ease',
+                  }}
+                  className="group-hover:translate-y-0"
+                >
+                  <h3
+                    style={{
+                      color: '#ffffff',
+                      fontWeight: 700,
+                      fontSize: '18px',
+                    }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p style={{ color: '#E54B1E', fontSize: '14px' }}>{item.service}</p>
                 </div>
               </motion.div>
             ))}
@@ -68,27 +284,54 @@ export default function Showroom() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary-black">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section
+        style={{
+          padding: '80px 0',
+          backgroundColor: '#000000',
+        }}
+        className="lg:py-28"
+      >
+        <div
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '0 24px',
+            textAlign: 'center',
+          }}
+        >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl sm:text-4xl font-black uppercase mb-6">
-              <span className="text-text-primary">Ihr Fahrzeug </span>
+            <h2
+              className="headline-decorated"
+              style={{
+                fontSize: 'clamp(1.5rem, 4vw, 2.25rem)',
+                fontWeight: 900,
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                marginBottom: '24px',
+                color: '#ffffff',
+              }}
+            >
+              <span style={{ color: '#ffffff' }}>Ihr Fahrzeug </span>
               <span className="gradient-text">hier?</span>
             </h2>
-            <p className="text-text-secondary text-lg mb-8">
+            <p
+              style={{
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontSize: '18px',
+                marginBottom: '32px',
+              }}
+              className="lg:text-lg"
+            >
               Kontaktieren Sie uns für ein unverbindliches Angebot und werden Sie Teil unserer Showroom-Galerie.
             </p>
-            <a
-              href="/kontakt"
-              className="inline-block gradient-border px-8 py-4 rounded-full text-text-primary font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity duration-200"
-            >
+            <Link to="/kontakt" className="btn-primary">
               Jetzt anfragen
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Award, Users, Clock, Shield } from 'lucide-react'
+import { Award, Users, Clock, Shield, Building2 } from 'lucide-react'
 import Partners from '../components/sections/Partners'
 
 const stats = [
@@ -28,27 +28,94 @@ export default function About() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-primary-black overflow-hidden">
+      <section
+        style={{
+          position: 'relative',
+          padding: '80px 0',
+          backgroundColor: '#000000',
+          overflow: 'hidden',
+        }}
+        className="lg:py-28"
+      >
         <div className="absolute inset-0">
           <img
             src="/images/showroom.jpg"
             alt="Epic Cars Showroom"
-            className="w-full h-full object-cover opacity-30"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-black via-primary-black/80 to-transparent" />
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(to right, #000000, rgba(0,0,0,0.8), transparent)',
+            }}
+          />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '0 24px',
+            position: 'relative',
+          }}
+        >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl"
+            style={{ maxWidth: '768px' }}
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase mb-6">
-              <span className="text-text-primary">Über </span>
-              <span>Epic Cars</span>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                marginBottom: '24px',
+              }}
+            >
+              <div
+                className="gradient-bg"
+                style={{
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <Building2 style={{ height: '20px', width: '20px', color: '#ffffff' }} />
+              </div>
+              <span
+                style={{
+                  color: '#E54B1E',
+                  fontWeight: 600,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                }}
+              >
+                Über Uns
+              </span>
+            </div>
+            <h1
+              style={{
+                fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+                fontWeight: 900,
+                textTransform: 'uppercase',
+                marginBottom: '24px',
+                lineHeight: 1.1,
+              }}
+            >
+              <span style={{ color: '#ffffff' }}>Über </span>
+              <span className="gradient-text">Epic Cars</span>
             </h1>
-            <p className="text-text-secondary text-lg leading-relaxed">
+            <p
+              style={{
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontSize: '18px',
+                lineHeight: 1.7,
+              }}
+            >
               Wir sind Ihr Partner für Fahrzeugveredelung, Performance und Schutz.
               Mit Leidenschaft und Expertise verwandeln wir besondere Autos in echte Unikate.
             </p>
@@ -57,20 +124,42 @@ export default function About() {
       </section>
 
       {/* Story Section */}
-      <section className="py-20 lg:py-32 bg-primary-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section
+        style={{
+          padding: '80px 0',
+          backgroundColor: '#161616',
+        }}
+        className="lg:py-28"
+      >
+        <div
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '0 24px',
+          }}
+        >
+          <div
+            style={{ gap: '16px' }}
+            className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6 items-center"
+          >
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl sm:text-4xl font-black uppercase mb-6">
-                <span className="text-text-primary">Unsere </span>
-                <span>Geschichte</span>
+              <h2
+                style={{
+                  fontSize: 'clamp(1.5rem, 4vw, 2.25rem)',
+                  fontWeight: 900,
+                  textTransform: 'uppercase',
+                  marginBottom: '24px',
+                }}
+              >
+                <span style={{ color: '#ffffff' }}>Unsere </span>
+                <span className="gradient-text">Geschichte</span>
               </h2>
-              <div className="space-y-4 text-text-secondary leading-relaxed">
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.7 }}>
                 <p>
                   Was als Leidenschaft für außergewöhnliche Fahrzeuge begann, ist heute eines der
                   führenden Unternehmen für Fahrzeugveredelung in Deutschland.
@@ -91,12 +180,33 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="relative aspect-[4/3] rounded-2xl overflow-hidden"
+              className="group"
+              style={{
+                position: 'relative',
+                aspectRatio: '4/3',
+                borderRadius: '12px',
+                overflow: 'hidden',
+              }}
             >
               <img
                 src="/images/epic-cars-service-qualifikation.jpg"
                 alt="Epic Cars Team"
-                className="w-full h-full object-cover"
+                className="img-zoom"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                }}
+              />
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(to top, rgba(0,0,0,0.3), transparent)',
+                  opacity: 0,
+                  transition: 'opacity 0.5s ease',
+                }}
+                className="group-hover:opacity-100"
               />
             </motion.div>
           </div>
@@ -104,9 +214,23 @@ export default function About() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-primary-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <section
+        style={{
+          padding: '64px 0',
+          backgroundColor: '#000000',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '0 24px',
+          }}
+        >
+          <div
+            style={{ gap: '16px' }}
+            className="grid grid-cols-2 lg:grid-cols-4 lg:gap-6"
+          >
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -114,13 +238,42 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
+                style={{
+                  textAlign: 'center',
+                  transition: 'transform 0.3s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-4px)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)'
+                }}
               >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-border flex items-center justify-center">
-                  <stat.icon className="h-8 w-8 text-text-primary" />
+                <div
+                  className="gradient-bg"
+                  style={{
+                    width: '64px',
+                    height: '64px',
+                    margin: '0 auto 16px',
+                    borderRadius: '12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <stat.icon style={{ height: '32px', width: '32px', color: '#ffffff' }} />
                 </div>
-                <div className="text-4xl font-black mb-2">{stat.number}</div>
-                <div className="text-text-secondary">{stat.label}</div>
+                <div
+                  className="gradient-text"
+                  style={{
+                    fontSize: '36px',
+                    fontWeight: 900,
+                    marginBottom: '8px',
+                  }}
+                >
+                  {stat.number}
+                </div>
+                <div style={{ color: 'rgba(255, 255, 255, 0.6)' }}>{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -128,25 +281,62 @@ export default function About() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 lg:py-32 bg-primary-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        style={{
+          padding: '80px 0',
+          backgroundColor: '#161616',
+        }}
+        className="lg:py-28"
+      >
+        <div
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '0 24px',
+          }}
+        >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            style={{
+              textAlign: 'center',
+              marginBottom: '56px',
+            }}
+            className="lg:mb-20"
           >
-            <h2 className="text-3xl sm:text-4xl font-black uppercase mb-4">
-              <span className="text-text-primary">Unser </span>
-              <span>Team</span>
+            <h2
+              className="headline-decorated"
+              style={{
+                fontSize: 'clamp(1.5rem, 4vw, 2.25rem)',
+                fontWeight: 900,
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                marginBottom: '24px',
+                color: '#ffffff',
+              }}
+            >
+              Unser Team
             </h2>
-            <p className="text-text-secondary max-w-2xl mx-auto">
+            <p
+              style={{
+                color: 'rgba(255, 255, 255, 0.7)',
+                maxWidth: '576px',
+                margin: '0 auto',
+                fontSize: '16px',
+                lineHeight: 1.7,
+              }}
+              className="lg:text-lg"
+            >
               Die Menschen hinter Epic Cars - leidenschaftlich, qualifiziert und engagiert.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div
+            style={{ gap: '16px', maxWidth: '896px', margin: '0 auto' }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:gap-6"
+          >
             {team.map((member, index) => (
               <motion.div
                 key={member.name}
@@ -154,18 +344,58 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-primary-black rounded-2xl p-6 border border-primary-gray/30"
+                style={{
+                  backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                  borderRadius: '12px',
+                  padding: '24px',
+                  transition: 'all 0.3s ease',
+                }}
+                className="sm:p-5 lg:p-6"
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.6)'
+                  e.currentTarget.style.transform = 'translateY(-4px)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.4)'
+                  e.currentTarget.style.transform = 'translateY(0)'
+                }}
               >
-                <div className="flex items-start space-x-4">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-20 h-20 rounded-full object-cover"
-                  />
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
+                  <div
+                    className="gradient-bg"
+                    style={{
+                      padding: '2px',
+                      borderRadius: '50%',
+                      flexShrink: 0,
+                    }}
+                  >
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      style={{
+                        width: '80px',
+                        height: '80px',
+                        borderRadius: '50%',
+                        objectFit: 'cover',
+                      }}
+                    />
+                  </div>
                   <div>
-                    <h3 className="text-text-primary font-bold text-lg">{member.name}</h3>
-                    <p className="text-accent-orange text-sm mb-2">{member.role}</p>
-                    <p className="text-text-secondary text-sm">{member.description}</p>
+                    <h3
+                      style={{
+                        color: '#ffffff',
+                        fontWeight: 700,
+                        fontSize: '18px',
+                      }}
+                    >
+                      {member.name}
+                    </h3>
+                    <p style={{ color: '#E54B1E', fontSize: '14px', marginBottom: '8px' }}>
+                      {member.role}
+                    </p>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '14px' }}>
+                      {member.description}
+                    </p>
                   </div>
                 </div>
               </motion.div>
