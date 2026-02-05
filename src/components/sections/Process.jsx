@@ -163,7 +163,6 @@ export default function Process() {
                   position: 'relative',
                   zIndex: 1,
                   background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
                 }}
               >
                 <step.icon style={{ height: '22px', width: '22px', color: '#ffffff' }} />

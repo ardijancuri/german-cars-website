@@ -10,19 +10,19 @@ const services = [
   {
     title: 'Lackschutz',
     description: 'XPEL PPF Schutzfolien schützen Ihren Lack vor Steinschlägen, Kratzern und Umwelteinflüssen.',
-    image: '/images/gallery-1.jpg',
+    image: '/images/a68b06.jpeg',
     link: '/lackschutz',
   },
   {
     title: 'Scheibentönung',
     description: 'Professionelle Scheibentönung für mehr Privatsphäre, UV-Schutz und eine elegante Optik.',
-    image: '/images/gallery-4.jpg',
+    image: '/images/683e6a.jpeg',
     link: '/scheibentoenung',
   },
   {
     title: 'Detailing',
     description: 'High-End Fahrzeugaufbereitung mit Premium-Produkten für ein makelloses Finish.',
-    image: '/images/gallery-6.jpg',
+    image: '/images/711db4.jpeg',
     link: '/detailing',
   },
   {
@@ -100,7 +100,7 @@ export default function Services() {
               clickable: true,
               el: '.services-pagination',
             }}
-            style={{ padding: '0 0 16px' }}
+            style={{ padding: '0 24px 16px' }}
           >
             {services.map((service, index) => (
               <SwiperSlide key={service.title}>

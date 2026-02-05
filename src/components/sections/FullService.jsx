@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion'
 import { Truck, Award, Settings, Shield, Building2, Coffee } from 'lucide-react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 const fullServices = [
   {
@@ -95,13 +99,125 @@ export default function FullService() {
           </p>
         </motion.div>
 
-        {/* Services Grid - 3 columns */}
+        {/* Mobile Slider - visible only on mobile */}
+        <div className="block sm:hidden" style={{ margin: '0 -24px' }}>
+          <Swiper
+            modules={[Pagination]}
+            slidesPerView={1}
+            spaceBetween={24}
+            grabCursor={true}
+            pagination={{
+              clickable: true,
+              el: '.fullservice-pagination',
+            }}
+            style={{ padding: '0 24px 16px' }}
+          >
+            {fullServices.map((service) => (
+              <SwiperSlide key={service.title}>
+                <div
+                  className="group"
+                  style={{
+                    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                    borderRadius: '12px',
+                    overflow: 'hidden',
+                  }}
+                >
+                  {/* Image */}
+                  <div
+                    style={{
+                      position: 'relative',
+                      aspectRatio: '16/10',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="img-zoom"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                      }}
+                    />
+                    <div
+                      style={{
+                        position: 'absolute',
+                        inset: 0,
+                        background: 'linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%)',
+                      }}
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div style={{ padding: '16px' }}>
+                    <div
+                      style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: '12px',
+                      }}
+                    >
+                      <div
+                        className="gradient-bg"
+                        style={{
+                          flexShrink: 0,
+                          width: '40px',
+                          height: '40px',
+                          borderRadius: '50%',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                        }}
+                      >
+                        <service.icon style={{ height: '18px', width: '18px', color: '#ffffff' }} />
+                      </div>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <h3
+                          style={{
+                            color: '#ffffff',
+                            fontSize: '16px',
+                            fontWeight: 700,
+                            marginBottom: '6px',
+                          }}
+                        >
+                          {service.title}
+                        </h3>
+                        <p
+                          style={{
+                            color: 'rgba(255, 255, 255, 0.5)',
+                            fontSize: '13px',
+                            lineHeight: 1.6,
+                          }}
+                        >
+                          {service.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* Pagination Dots */}
+          <div
+            className="fullservice-pagination"
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '8px',
+              marginTop: '24px',
+            }}
+          />
+        </div>
+
+        {/* Services Grid - 3 columns, hidden on mobile */}
         <div
           style={{
-            display: 'grid',
             gap: '16px',
           }}
-          className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6"
+          className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 lg:gap-6"
         >
           {fullServices.map((service, index) => (
             <motion.div

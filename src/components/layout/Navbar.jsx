@@ -9,7 +9,7 @@ const services = [
   {
     name: 'XPEL-PPF / Lackschutzfolie',
     path: '/lackschutz',
-    image: '/images/gallery-1.jpg',
+    image: '/images/a68b06.jpeg',
     description: 'Schützen Sie Ihren Lack vor Steinschlägen'
   },
   {
@@ -21,13 +21,13 @@ const services = [
   {
     name: 'Detailing',
     path: '/detailing',
-    image: '/images/gallery-6.jpg',
+    image: '/images/711db4.jpeg',
     description: 'High-End Fahrzeugaufbereitung'
   },
   {
     name: 'Scheibentönung',
     path: '/scheibentoenung',
-    image: '/images/gallery-4.jpg',
+    image: '/images/683e6a.jpeg',
     description: 'Professionelle Scheibentönung'
   },
 ]
