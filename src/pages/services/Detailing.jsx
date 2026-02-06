@@ -61,7 +61,7 @@ export default function Detailing() {
       >
         <div className="absolute inset-0">
           <img
-            src="/images/gallery-6.jpg"
+            src="/images/detailing.jpeg"
             alt="Detailing"
             className="w-full h-full object-cover"
           />

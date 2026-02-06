@@ -43,7 +43,7 @@ export default function PaintProtection() {
       >
         <div className="absolute inset-0">
           <img
-            src="/images/gallery-1.jpg"
+            src="/images/porche-car1.jpeg"
             alt="Lackschutzfolie"
             className="w-full h-full object-cover"
           />

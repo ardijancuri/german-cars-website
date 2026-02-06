@@ -27,13 +27,13 @@ const fullServices = [
   {
     title: 'Sicherheit',
     description: 'Videoüberwachung, Bewegungsmelder und Alarmanlage. Ihr Fahrzeug ist bei uns sicher aufgehoben.',
-    image: '/images/epic-cars-service-sicherheit.jpg',
+    image: '/images/lambo-car1.jpeg',
     icon: Shield,
   },
   {
     title: 'Showroom',
     description: 'Exklusive Fahrzeugübergabe in unserem Showroom mit Ambiente, Getränken und Musik.',
-    image: '/images/showroom.jpg',
+    image: '/images/mercedes-car.jpeg',
     icon: Building2,
   },
   {

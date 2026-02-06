@@ -10,7 +10,7 @@ const services = [
   {
     title: 'Lackschutz',
     description: 'XPEL PPF Schutzfolien schützen Ihren Lack vor Steinschlägen, Kratzern und Umwelteinflüssen.',
-    image: '/images/a68b06.jpeg',
+    image: '/images/porche-car1.jpeg',
     link: '/lackschutz',
   },
   {
@@ -22,7 +22,7 @@ const services = [
   {
     title: 'Detailing',
     description: 'High-End Fahrzeugaufbereitung mit Premium-Produkten für ein makelloses Finish.',
-    image: '/images/711db4.jpeg',
+    image: '/images/detailing.jpeg',
     link: '/detailing',
   },
   {

@@ -7,16 +7,16 @@ import 'swiper/css/pagination'
 import 'swiper/css/effect-coverflow'
 
 const galleryImages = [
-  '/images/gallery-1.jpg',
-  '/images/gallery-2.jpg',
-  '/images/epic-cars-folierung-3.jpg',
-  '/images/gallery-4.jpg',
-  '/images/gallery-5.jpg',
-  '/images/gallery-6.jpg',
-  '/images/gallery-7.jpg',
-  '/images/gallery-8.jpg',
-  '/images/gallery-9.jpg',
-  '/images/gallery-10.jpg',
+  '/images/porche-car1.jpeg',
+  '/images/lambo-car1.jpeg',
+  '/images/mercedes-car.jpeg',
+  '/images/detailing.jpeg',
+  '/images/bmw-car.jpeg',
+  '/images/car-wrapping.jpeg',
+  '/images/lambo-car.jpeg',
+  '/images/Lackschutzfolie.jpeg',
+  '/images/porche-car.jpeg',
+  '/images/lambo-car2.jpeg',
 ]
 
 export default function Gallery() {

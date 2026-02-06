@@ -9,7 +9,7 @@ const services = [
   {
     name: 'XPEL-PPF / Lackschutzfolie',
     path: '/lackschutz',
-    image: '/images/a68b06.jpeg',
+    image: '/images/porche-car1.jpeg',
     description: 'Schützen Sie Ihren Lack vor Steinschlägen'
   },
   {
@@ -21,7 +21,7 @@ const services = [
   {
     name: 'Detailing',
     path: '/detailing',
-    image: '/images/711db4.jpeg',
+    image: '/images/detailing.jpeg',
     description: 'High-End Fahrzeugaufbereitung'
   },
   {
