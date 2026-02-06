@@ -39,7 +39,7 @@ export default function About() {
       >
         <div className="absolute inset-0">
           <img
-            src="/images/showroom.jpg"
+            src="/images/herosection.jpeg"
             alt="Epic Cars Showroom"
             style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }}
           />
@@ -189,7 +189,7 @@ export default function About() {
               }}
             >
               <img
-                src="/images/epic-cars-service-qualifikation.jpg"
+                src="/images/Lackschutzfolie.jpeg"
                 alt="Epic Cars Team"
                 className="img-zoom"
                 style={{

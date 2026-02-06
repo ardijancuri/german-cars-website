@@ -33,7 +33,7 @@ export default function WindowTinting() {
       >
         <div className="absolute inset-0">
           <img
-            src="/images/gallery-4.jpg"
+            src="/images/lambo-car.jpeg"
             alt="Scheibentönung"
             className="w-full h-full object-cover"
           />
@@ -191,7 +191,7 @@ export default function WindowTinting() {
               }}
             >
               <img
-                src="/images/gallery-10.jpg"
+                src="/images/mercedes-car.jpeg"
                 alt="Scheibentönung Beispiel"
                 className="img-zoom"
                 style={{

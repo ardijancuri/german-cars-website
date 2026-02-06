@@ -16,7 +16,7 @@ export default function Contact() {
       >
         <div className="absolute inset-0">
           <img
-            src="/images/showroom.jpg"
+            src="/images/bmw-car.jpeg"
             alt="Epic Cars Kontakt"
             className="w-full h-full object-cover"
             style={{ opacity: 0.2 }}

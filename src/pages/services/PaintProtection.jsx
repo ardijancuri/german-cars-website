@@ -201,7 +201,7 @@ export default function PaintProtection() {
               }}
             >
               <img
-                src="/images/epic-cars-folierung-3.jpg"
+                src="/images/Lackschutzfolie.jpeg"
                 alt="PPF Anwendung"
                 className="img-zoom"
                 style={{

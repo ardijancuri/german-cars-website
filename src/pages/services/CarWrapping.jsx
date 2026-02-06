@@ -12,10 +12,10 @@ const benefits = [
 ]
 
 const finishes = [
-  { name: 'Glanz', description: 'Klassischer Hochglanz-Look', image: '/images/gallery-2.jpg' },
-  { name: 'Matt', description: 'Elegante matte Oberfläche', image: '/images/gallery-5.jpg' },
-  { name: 'Satin', description: 'Seidiger Halbglanz', image: '/images/gallery-7.jpg' },
-  { name: 'Chrom', description: 'Spiegelnde Chromoptik', image: '/images/gallery-9.jpg' },
+  { name: 'Glanz', description: 'Klassischer Hochglanz-Look', image: '/images/lambo-car2.jpeg' },
+  { name: 'Matt', description: 'Elegante matte Oberfläche', image: '/images/car-wrapping.jpeg' },
+  { name: 'Satin', description: 'Seidiger Halbglanz', image: '/images/lambo-car1.jpeg' },
+  { name: 'Chrom', description: 'Spiegelnde Chromoptik', image: '/images/porche-car.jpeg' },
 ]
 
 export default function CarWrapping() {
@@ -32,7 +32,7 @@ export default function CarWrapping() {
       >
         <div className="absolute inset-0">
           <img
-            src="/images/epic-cars-car-wrapping.jpg"
+            src="/images/car-wraping.jpg"
             alt="Car Wrapping"
             className="w-full h-full object-cover"
           />
@@ -190,7 +190,7 @@ export default function CarWrapping() {
               }}
             >
               <img
-                src="/images/gallery-4.jpg"
+                src="/images/mercedes-car.jpeg"
                 alt="Car Wrapping Prozess"
                 className="img-zoom"
                 style={{

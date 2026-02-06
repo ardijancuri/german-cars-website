@@ -15,7 +15,7 @@ const services = [
   {
     name: 'Car-Wrapping',
     path: '/car-wrapping',
-    image: '/images/epic-cars-car-wrapping.jpg',
+    image: '/images/car-wrapping.jpeg',
     description: 'Individuelle Fahrzeugfolierung'
   },
   {
@@ -27,7 +27,7 @@ const services = [
   {
     name: 'Scheibentönung',
     path: '/scheibentoenung',
-    image: '/images/683e6a.jpeg',
+    image: '/images/lambo-car.jpeg',
     description: 'Professionelle Scheibentönung'
   },
 ]

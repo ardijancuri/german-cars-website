@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom'
 import { Camera } from 'lucide-react'
 
 const showroomImages = [
-  { src: '/images/gallery-1.jpg', title: 'Porsche 911 GT3', service: 'Lackschutzfolie' },
-  { src: '/images/gallery-2.jpg', title: 'BMW M4', service: 'Car Wrapping' },
-  { src: '/images/gallery-4.jpg', title: 'Mercedes AMG GT', service: 'Scheibentönung' },
-  { src: '/images/gallery-5.jpg', title: 'Audi RS6', service: 'Detailing' },
-  { src: '/images/gallery-6.jpg', title: 'Lamborghini Huracán', service: 'Vollfolierung' },
-  { src: '/images/gallery-7.jpg', title: 'Ferrari 488', service: 'PPF & Detailing' },
-  { src: '/images/gallery-8.jpg', title: 'McLaren 720S', service: 'Lackschutz' },
-  { src: '/images/gallery-9.jpg', title: 'Porsche Taycan', service: 'Car Wrapping' },
-  { src: '/images/gallery-10.jpg', title: 'BMW M8', service: 'Vollfolierung' },
-  { src: '/images/epic-cars-car-wrapping.jpg', title: 'Custom Project', service: 'Car Wrapping' },
+  { src: '/images/porche-car1.jpeg', title: 'Porsche 911 GT3', service: 'Lackschutzfolie' },
+  { src: '/images/lambo-car2.jpeg', title: 'Lamborghini Urus', service: 'Car Wrapping' },
+  { src: '/images/mercedes-car.jpeg', title: 'Mercedes G-Klasse', service: 'Scheibentönung' },
+  { src: '/images/bmw-car.jpeg', title: 'BMW M4 CS', service: 'Detailing' },
+  { src: '/images/car-wrapping.jpeg', title: 'Porsche 911 GT3 RS', service: 'Vollfolierung' },
+  { src: '/images/lambo-car1.jpeg', title: 'Maserati MC20', service: 'PPF & Detailing' },
+  { src: '/images/detailing.jpeg', title: 'Porsche 911 GT3', service: 'Lackschutz' },
+  { src: '/images/porche-car.jpeg', title: 'Porsche 911 GT3', service: 'Car Wrapping' },
+  { src: '/images/Lackschutzfolie.jpeg', title: 'Porsche 911', service: 'Lackschutzfolie' },
+  { src: '/images/herosection1.jpeg', title: 'Porsche 911 GT3', service: 'Detailing' },
 ]
 
 export default function Showroom() {
@@ -29,7 +29,7 @@ export default function Showroom() {
       >
         <div className="absolute inset-0">
           <img
-            src="/images/gallery-1.jpg"
+            src="/images/porche-car1.jpeg"
             alt="Epic Cars Showroom"
             className="w-full h-full object-cover"
             style={{ opacity: 0.2 }}

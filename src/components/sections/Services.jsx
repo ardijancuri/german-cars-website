@@ -28,7 +28,7 @@ const services = [
   {
     title: 'Car Wrapping',
     description: 'Individuelle Fahrzeugfolierung für einzigartige Designs und Farbwechsel.',
-    image: '/images/epic-cars-car-wrapping.jpg',
+    image: '/images/car-wraping.jpg',
     link: '/car-wrapping',
   },
 ]

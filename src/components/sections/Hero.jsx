@@ -7,19 +7,19 @@ import 'swiper/css/effect-fade'
 
 const heroSlides = [
   {
-    image: '/images/epic-cars-headbanner.jpg',
+    image: '/images/herosection.jpeg',
     title: 'Protecting & Customising',
     highlight: 'Epic Cars',
     subtitle: 'Schutz, Optik, Performance',
   },
   {
-    image: '/images/epic-cars-car-wrapping.jpg',
+    image: '/images/car-wraping.jpg',
     title: 'Premium',
     highlight: 'Car Wrapping',
     subtitle: 'Individuelle Designs für Ihr Fahrzeug',
   },
   {
-    image: '/images/epic-cars-folierung-3.jpg',
+    image: '/images/herosection2.jpeg',
     title: 'Professioneller',
     highlight: 'Lackschutz',
     subtitle: 'XPEL PPF Schutzfolien vom Experten',

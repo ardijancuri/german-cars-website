@@ -21,7 +21,7 @@ const fullServices = [
   {
     title: 'Ausstattung',
     description: 'Modernste Werkstattausstattung und hochwertige Materialien führender Hersteller.',
-    image: '/images/ruf.jpg',
+    image: '/images/bmw-car.jpeg',
     icon: Settings,
   },
   {

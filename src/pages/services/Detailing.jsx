@@ -219,7 +219,7 @@ export default function Detailing() {
               }}
             >
               <img
-                src="/images/gallery-8.jpg"
+                src="/images/herosection1.jpeg"
                 alt="Detailing Prozess"
                 className="img-zoom"
                 style={{
