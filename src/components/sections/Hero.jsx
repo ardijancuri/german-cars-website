@@ -29,9 +29,9 @@ const heroSlides = [
 export default function Hero() {
   return (
     <section
+      className="h-[60vh] lg:h-screen"
       style={{
         position: 'relative',
-        height: '100vh',
         width: '100%',
         overflow: 'hidden',
       }}
@@ -91,7 +91,7 @@ export default function Hero() {
                   >
                     <h1
                       style={{
-                        fontSize: 'clamp(2.5rem, 8vw, 4.5rem)',
+                        fontSize: 'clamp(2rem, 7vw, 4.5rem)',
                         fontWeight: 900,
                         textTransform: 'uppercase',
                         lineHeight: 1.1,
