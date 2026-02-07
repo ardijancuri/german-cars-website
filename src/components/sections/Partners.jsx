@@ -60,7 +60,7 @@ export default function Partners() {
           style={{
             textAlign: 'center',
             fontSize: '14px',
-            color: 'rgba(255, 255, 255, 0.4)',
+            color: '#ffffff',
             textTransform: 'uppercase',
             letterSpacing: '0.2em',
           }}
