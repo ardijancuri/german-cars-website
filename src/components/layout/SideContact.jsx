@@ -21,13 +21,12 @@ const contactOptions = [
     id: 'email',
     icon: Mail,
     label: 'E-Mail',
-    value: 'info@epic-cars.de',
-    href: 'mailto:info@epic-cars.de',
+    value: 'autopflegearia@gmail.com',
+    href: 'mailto:autopflegearia@gmail.com',
   },
 ]
 
 export default function SideContact() {
-  const [hoveredId, setHoveredId] = useState(null)
   const [isExpanded, setIsExpanded] = useState(false)
 
   return (
@@ -70,8 +69,6 @@ export default function SideContact() {
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 exit={{ opacity: 0, x: 30, scale: 0.8 }}
                 transition={{ duration: 0.25, delay: index * 0.06 }}
-                onMouseEnter={() => setHoveredId(option.id)}
-                onMouseLeave={() => setHoveredId(null)}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -106,9 +103,7 @@ export default function SideContact() {
                     width: '48px',
                     height: '48px',
                     borderRadius: '12px',
-                    background: hoveredId === option.id
-                      ? 'linear-gradient(135deg, #E54B1E 0%, #CC0D3F 100%)'
-                      : '#1a1a1a',
+                    background: 'linear-gradient(135deg, #E54B1E 0%, #CC0D3F 100%)',
                     border: 'none',
                     display: 'flex',
                     alignItems: 'center',
@@ -120,7 +115,8 @@ export default function SideContact() {
                     style={{
                       width: '20px',
                       height: '20px',
-                      color: '#E54B1E',
+                      color: '#ffffff',
+                      transition: 'color 0.3s ease',
                     }}
                   />
                 </div>
