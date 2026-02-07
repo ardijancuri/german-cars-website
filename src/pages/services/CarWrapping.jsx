@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Palette, CheckCircle } from 'lucide-react'
+import SEO from '../../components/SEO'
 
 const benefits = [
   'Unbegrenzte Farbauswahl',
@@ -21,6 +22,13 @@ const finishes = [
 export default function CarWrapping() {
   return (
     <div className="pt-20">
+      <SEO
+        title="Car Wrapping - Fahrzeugfolierung"
+        description="Professionelles Car Wrapping bei Autopflege Aria. Unbegrenzte Farbauswahl, reversible Vollfolierung und Teilfolierung. Matt, Glanz, Satin, Chrom und individuelle Designs."
+        keywords="Car Wrapping, Fahrzeugfolierung, Vollfolierung, Teilfolierung, Autofolierung, Matt Folie, Glanz Folie, Satin Folie, Chrom Folierung, Design Wrapping"
+        path="/car-wrapping"
+        image="/images/car-wrapping.jpeg"
+      />
       {/* Hero Section */}
       <section
         style={{

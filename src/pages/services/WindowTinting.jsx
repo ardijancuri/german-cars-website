@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Sun, CheckCircle } from 'lucide-react'
+import SEO from '../../components/SEO'
 
 const benefits = [
   'UV-Schutz bis zu 99%',
@@ -22,6 +23,13 @@ const tintLevels = [
 export default function WindowTinting() {
   return (
     <div className="pt-20">
+      <SEO
+        title="Scheibentönung - Professionelle Tönungsfolie"
+        description="Professionelle Scheibentönung bei Autopflege Aria. UV-Schutz bis 99%, Wärmereduktion, erhöhte Privatsphäre und Blendschutz für Ihr Fahrzeug."
+        keywords="Scheibentönung, Tönungsfolie, Fensterfolie, UV-Schutz, Sonnenschutzfolie, Wärmeschutz, Privatsphäre, Autoscheiben tönen"
+        path="/scheibentoenung"
+        image="/images/lambo-car.jpeg"
+      />
       {/* Hero Section */}
       <section
         style={{

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Award, Users, Clock, Shield, Building2 } from 'lucide-react'
+import SEO from '../components/SEO'
 import Partners from '../components/sections/Partners'
 
 const stats = [
@@ -13,6 +14,12 @@ const stats = [
 export default function About() {
   return (
     <div className="pt-20">
+      <SEO
+        title="Über Uns"
+        description="Erfahren Sie mehr über Autopflege Aria - über 10 Jahre Erfahrung in professioneller Fahrzeugpflege und Veredelung. 500+ zufriedene Kunden und 100% Qualitätsgarantie."
+        keywords="Autopflege Aria, Über uns, Fahrzeugveredelung, Erfahrung, Qualität, Fahrzeugpflege Team"
+        path="/wir"
+      />
       {/* Hero Section */}
       <section
         style={{

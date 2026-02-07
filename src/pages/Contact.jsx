@@ -1,10 +1,17 @@
 import { motion } from 'framer-motion'
 import { Mail, Clock, Calendar } from 'lucide-react'
+import SEO from '../components/SEO'
 import ContactForm from '../components/sections/ContactForm'
 
 export default function Contact() {
   return (
     <div className="pt-20">
+      <SEO
+        title="Kontakt"
+        description="Kontaktieren Sie Autopflege Aria für ein unverbindliches Angebot. Professionelle Beratung zu Lackschutzfolie, Car Wrapping, Detailing und Scheibentönung."
+        keywords="Kontakt, Autopflege Aria, Angebot, Beratung, Termin, Fahrzeugpflege Anfrage"
+        path="/kontakt"
+      />
       {/* Hero Section */}
       <section
         style={{

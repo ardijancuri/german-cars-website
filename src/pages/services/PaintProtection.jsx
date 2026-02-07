@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Shield, CheckCircle, Award } from 'lucide-react'
+import SEO from '../../components/SEO'
 
 const benefits = [
   'Schutz vor Steinschlägen und Kratzern',
@@ -32,6 +33,13 @@ const packages = [
 export default function PaintProtection() {
   return (
     <div className="pt-20">
+      <SEO
+        title="XPEL PPF Lackschutzfolie"
+        description="XPEL PPF Lackschutzfolie bei Autopflege Aria. Schutz vor Steinschlägen und Kratzern, selbstheilende Oberfläche, unsichtbarer Lackschutz mit 10 Jahren Garantie."
+        keywords="Lackschutzfolie, XPEL PPF, Paint Protection Film, Steinschlagschutz, Lackschutz, Schutzfolie, selbstheilend, UV-Schutz, Autopflege"
+        path="/lackschutz"
+        image="/images/Lackschutzfolie.jpeg"
+      />
       {/* Hero Section */}
       <section
         style={{

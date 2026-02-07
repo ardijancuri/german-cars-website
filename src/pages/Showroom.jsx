@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Camera } from 'lucide-react'
+import SEO from '../components/SEO'
 
 const showroomImages = [
   { src: '/images/porche-car1.jpeg', title: 'Porsche 911 GT3', service: 'Lackschutzfolie' },
@@ -18,6 +19,13 @@ const showroomImages = [
 export default function Showroom() {
   return (
     <div className="pt-20">
+      <SEO
+        title="Showroom - Unsere Arbeiten"
+        description="Entdecken Sie unseren Showroom mit Projekten aus Lackschutzfolie, Car Wrapping, Detailing und Scheibentönung. Porsche, Lamborghini, Mercedes, BMW und mehr."
+        keywords="Showroom, Galerie, Fahrzeugpflege Projekte, Porsche Folierung, Lamborghini Wrapping, Mercedes Detailing, BMW Lackschutz"
+        path="/showroom"
+        image="/images/porche-car1.jpeg"
+      />
       {/* Hero Section */}
       <section
         style={{

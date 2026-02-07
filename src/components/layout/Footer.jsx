@@ -301,14 +301,28 @@ export default function Footer() {
             marginTop: '48px',
             paddingTop: '32px',
             display: 'flex',
-            flexDirection: 'row',
+            flexWrap: 'wrap',
             alignItems: 'center',
             justifyContent: 'space-between',
             gap: '16px',
           }}
         >
-          <p style={{ color: 'rgba(255, 255, 255, 0.4)', fontSize: '14px' }}>
-            &copy; {new Date().getFullYear()} Epic Cars. Alle Rechte vorbehalten.
+          <p
+            style={{ color: 'rgba(255, 255, 255, 0.4)', fontSize: '14px', width: '100%', textAlign: 'center' }}
+            className="md:w-auto md:text-left"
+          >
+            &copy; {new Date().getFullYear()} Epic Cars. Betrieben von{' '}
+            <a
+              href="https://oninova.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: '#E54B1E',
+                textDecoration: 'none',
+              }}
+            >
+              Oninova
+            </a>
           </p>
           <div style={{ display: 'flex', gap: '24px' }}>
             {footerLinks.legal.map((link) => (

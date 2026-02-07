@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Sparkles, CheckCircle, Award } from 'lucide-react'
+import SEO from '../../components/SEO'
 
 const benefits = [
   'Tiefenreinigung innen und außen',
@@ -50,6 +51,13 @@ const packages = [
 export default function Detailing() {
   return (
     <div className="pt-20">
+      <SEO
+        title="Detailing - Professionelle Autoaufbereitung"
+        description="Professionelles Auto Detailing bei Autopflege Aria. Tiefenreinigung, Lackaufbereitung, Keramikversiegelung, Lederreinigung und Motorwäsche für Ihr Fahrzeug."
+        keywords="Detailing, Autoaufbereitung, Keramikversiegelung, Lackaufbereitung, Politur, Lederreinigung, Motorwäsche, Fahrzeugpflege, Innenraumreinigung"
+        path="/detailing"
+        image="/images/detailing.jpeg"
+      />
       {/* Hero Section */}
       <section
         style={{
