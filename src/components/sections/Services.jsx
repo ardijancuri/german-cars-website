@@ -12,7 +12,7 @@ const services = [
   {
     title: 'Lackveredelung',
     description: 'Professionelle Lackaufbereitung, Politur und Versiegelung für neuwertigen Glanz.',
-    image: '/images/detailing.jpeg',
+    image: '/images/detailing.jpg',
     link: '/lackveredelung',
   },
   {
@@ -42,7 +42,7 @@ const services = [
   {
     title: 'Interieur',
     description: 'Professionelle Innenraumaufbereitung - Lederreinigung, Textilpflege und Tiefenreinigung.',
-    image: '/images/lambo-car.jpeg',
+    image: '/images/interior.jpg',
     link: '/interieur',
   },
   {
@@ -54,7 +54,7 @@ const services = [
   {
     title: 'Scheibentönung',
     description: 'Professionelle Scheibentönung für mehr Privatsphäre, UV-Schutz und eine elegante Optik.',
-    image: '/images/lambo-car2.jpeg',
+    image: '/images/window-tinting.jpeg',
     link: '/scheibentoenung',
   },
 ]

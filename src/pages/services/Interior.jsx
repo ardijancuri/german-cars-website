@@ -55,7 +55,7 @@ export default function Interior() {
         description="Professionelle Interieur Aufbereitung bei Autopflege Aria. Lederreinigung, Textilpflege, Dachhimmel, Geruchsneutralisierung und Tiefenreinigung."
         keywords="Interieur, Innenraumreinigung, Lederreinigung, Lederpflege, Textilreinigung, Polsterreinigung, Dachhimmel, Geruchsentfernung, Auto Innenraum"
         path="/interieur"
-        image="/images/lambo-car.jpeg"
+        image="/images/interior.jpg"
       />
       {/* Hero Section */}
       <section
@@ -68,7 +68,7 @@ export default function Interior() {
       >
         <div className="absolute inset-0">
           <img
-            src="/images/lambo-car.jpeg"
+            src="/images/interior.jpg"
             alt="Interieur Aufbereitung"
             className="w-full h-full object-cover"
           />

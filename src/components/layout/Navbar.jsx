@@ -9,7 +9,7 @@ const services = [
   {
     name: 'Lackveredelung',
     path: '/lackveredelung',
-    image: '/images/detailing.jpeg',
+    image: '/images/detailing.jpg',
     description: 'Professionelle Politur & Lackaufbereitung'
   },
   {
@@ -39,7 +39,7 @@ const services = [
   {
     name: 'Interieur',
     path: '/interieur',
-    image: '/images/lambo-car.jpeg',
+    image: '/images/interior.jpg',
     description: 'Innenraum-Aufbereitung & Pflege'
   },
   {
@@ -51,7 +51,7 @@ const services = [
   {
     name: 'Scheibentönung',
     path: '/scheibentoenung',
-    image: '/images/lambo-car2.jpeg',
+    image: '/images/window-tinting.jpeg',
     description: 'Professionelle Scheibentönung'
   },
 ]

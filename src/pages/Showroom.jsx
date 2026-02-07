@@ -4,16 +4,18 @@ import { Camera } from 'lucide-react'
 import SEO from '../components/SEO'
 
 const showroomImages = [
-  { src: '/images/porche-car1.jpeg', title: 'Porsche 911 GT3', service: 'Lackschutzfolie' },
-  { src: '/images/lambo-car2.jpeg', title: 'Lamborghini Urus', service: 'Car Wrapping' },
+  { src: '/images/detailing.jpg', title: 'Audi TT S', service: 'Lackveredelung' },
+  { src: '/images/decorative-image.jpg', title: 'Mercedes AMG GT', service: 'Keramik Beschichtung' },
   { src: '/images/mercedes-car.jpeg', title: 'Mercedes G-Klasse', service: 'Scheibentönung' },
-  { src: '/images/bmw-car.jpeg', title: 'BMW M4 CS', service: 'Detailing' },
-  { src: '/images/car-wrapping.jpeg', title: 'Porsche 911 GT3 RS', service: 'Vollfolierung' },
-  { src: '/images/lambo-car1.jpeg', title: 'Maserati MC20', service: 'PPF & Detailing' },
-  { src: '/images/detailing.jpeg', title: 'Porsche 911 GT3', service: 'Lackschutz' },
-  { src: '/images/porche-car.jpeg', title: 'Porsche 911 GT3', service: 'Car Wrapping' },
-  { src: '/images/Lackschutzfolie.jpeg', title: 'Porsche 911', service: 'Lackschutzfolie' },
-  { src: '/images/herosection1.jpeg', title: 'Porsche 911 GT3', service: 'Detailing' },
+  { src: '/images/interior.jpg', title: 'Tesla Model 3', service: 'Interieur' },
+  { src: '/images/bmw-car.jpeg', title: 'BMW M4 CS', service: 'Felgen Beschichtung' },
+  { src: '/images/porche-car1.jpeg', title: 'Porsche 911 GT3', service: 'Kratzer Entfernung' },
+  { src: '/images/lambo-car1.jpeg', title: 'Lamborghini Huracán', service: 'Keramik Beschichtung' },
+  { src: '/images/car-wrapping.jpeg', title: 'Porsche 911 GT3 RS', service: 'Lackveredelung' },
+  { src: '/images/window-tinting.jpeg', title: 'Scheibentönung', service: 'Scheibentönung' },
+  { src: '/images/lambo-car2.jpeg', title: 'Lamborghini Urus', service: 'Felgen Beschichtung' },
+  { src: '/images/porche-car.jpeg', title: 'Porsche 911 Turbo', service: 'Keramik Beschichtung' },
+  { src: '/images/Lackschutzfolie.jpeg', title: 'Porsche 911', service: 'Dellenentfernung' },
 ]
 
 export default function Showroom() {
@@ -170,7 +172,7 @@ export default function Showroom() {
               }}
               className="lg:text-lg"
             >
-              Entdecken Sie die Vielfalt unserer Projekte - von Lackschutz bis Car Wrapping.
+              Entdecken Sie die Vielfalt unserer Projekte - von Lackveredelung bis Scheibentönung.
             </p>
           </motion.div>
           <div

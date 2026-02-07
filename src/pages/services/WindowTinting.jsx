@@ -28,7 +28,7 @@ export default function WindowTinting() {
         description="Professionelle Scheibentönung bei Autopflege Aria. UV-Schutz bis 99%, Wärmereduktion, erhöhte Privatsphäre und Blendschutz für Ihr Fahrzeug."
         keywords="Scheibentönung, Tönungsfolie, Fensterfolie, UV-Schutz, Sonnenschutzfolie, Wärmeschutz, Privatsphäre, Autoscheiben tönen"
         path="/scheibentoenung"
-        image="/images/lambo-car.jpeg"
+        image="/images/window-tinting.jpeg"
       />
       {/* Hero Section */}
       <section
@@ -41,7 +41,7 @@ export default function WindowTinting() {
       >
         <div className="absolute inset-0">
           <img
-            src="/images/lambo-car.jpeg"
+            src="/images/window-tinting.jpeg"
             alt="Scheibentönung"
             className="w-full h-full object-cover"
           />

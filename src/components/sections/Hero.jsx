@@ -65,6 +65,21 @@ export default function Hero() {
               {/* Radial Overlay like reference */}
               <div className="hero-overlay" style={{ position: 'absolute', inset: 0 }} />
 
+              {/* Bottom black gradient - mobile only */}
+              <div
+                className="block lg:hidden"
+                style={{
+                  position: 'absolute',
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: '40%',
+                  background: 'linear-gradient(to top, #000000 0%, rgba(0,0,0,0.6) 40%, transparent 100%)',
+                  pointerEvents: 'none',
+                  zIndex: 1,
+                }}
+              />
+
               {/* Content - Centered */}
               <div
                 style={{

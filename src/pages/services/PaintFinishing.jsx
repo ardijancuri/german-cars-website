@@ -55,7 +55,7 @@ export default function PaintFinishing() {
         description="Professionelle Lackveredelung bei Autopflege Aria. Hochglanzpolitur, Swirl-Entfernung, Lackversiegelung und Farbauffrischung für Ihr Fahrzeug."
         keywords="Lackveredelung, Lackaufbereitung, Politur, Hochglanzpolitur, Swirl-Entfernung, Lackversiegelung, Farbvertiefung, Lackkorrektur"
         path="/lackveredelung"
-        image="/images/detailing.jpeg"
+        image="/images/detailing.jpg"
       />
       {/* Hero Section */}
       <section
@@ -68,7 +68,7 @@ export default function PaintFinishing() {
       >
         <div className="absolute inset-0">
           <img
-            src="/images/detailing.jpeg"
+            src="/images/detailing.jpg"
             alt="Lackveredelung"
             className="w-full h-full object-cover"
           />
@@ -226,7 +226,7 @@ export default function PaintFinishing() {
               }}
             >
               <img
-                src="/images/herosection1.jpeg"
+                src="/images/detailing.jpg"
                 alt="Lackveredelung Prozess"
                 className="img-zoom"
                 style={{

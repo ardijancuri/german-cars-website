@@ -1,5 +1,6 @@
 import SEO from '../components/SEO'
 import Hero from '../components/sections/Hero'
+import ServiceHighlight from '../components/sections/ServiceHighlight'
 import Services from '../components/sections/Services'
 import FullService from '../components/sections/FullService'
 import Testimonials from '../components/sections/Testimonials'
@@ -17,6 +18,7 @@ export default function Home() {
         path="/"
       />
       <Hero />
+      <ServiceHighlight />
       <Services />
       <FullService />
       <Testimonials />
