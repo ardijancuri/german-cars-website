@@ -82,16 +82,16 @@ export default function SideContact() {
                 {/* Label */}
                 <motion.span
                   initial={{ opacity: 0, x: 8 }}
-                  animate={{ opacity: hoveredId === option.id ? 1 : 0.7, x: 0 }}
+                  animate={{ opacity: 1, x: 0 }}
                   style={{
-                    background: 'rgba(0, 0, 0, 0.85)',
+                    background: 'rgba(0, 0, 0, 0.6)',
                     backdropFilter: 'blur(12px)',
-                    border: '1px solid rgba(229, 75, 30, 0.2)',
+                    WebkitBackdropFilter: 'blur(12px)',
                     borderRadius: '8px',
                     padding: '6px 14px',
                     color: '#ffffff',
                     fontSize: '13px',
-                    fontWeight: 500,
+                    fontWeight: 600,
                     letterSpacing: '0.02em',
                     whiteSpace: 'nowrap',
                     transition: 'all 0.2s ease',
@@ -108,26 +108,19 @@ export default function SideContact() {
                     borderRadius: '12px',
                     background: hoveredId === option.id
                       ? 'linear-gradient(135deg, #E54B1E 0%, #CC0D3F 100%)'
-                      : 'rgba(0, 0, 0, 0.85)',
-                    backdropFilter: 'blur(12px)',
-                    border: hoveredId === option.id
-                      ? '1px solid transparent'
-                      : '1px solid rgba(229, 75, 30, 0.3)',
+                      : '#1a1a1a',
+                    border: 'none',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     transition: 'all 0.3s ease',
-                    boxShadow: hoveredId === option.id
-                      ? '0 0 20px rgba(229, 75, 30, 0.4)'
-                      : '0 4px 16px rgba(0, 0, 0, 0.3)',
                   }}
                 >
                   <option.icon
                     style={{
                       width: '20px',
                       height: '20px',
-                      color: hoveredId === option.id ? '#ffffff' : '#E54B1E',
-                      transition: 'color 0.3s ease',
+                      color: '#E54B1E',
                     }}
                   />
                 </div>
@@ -146,20 +139,16 @@ export default function SideContact() {
           height: '56px',
           borderRadius: '14px',
           background: isExpanded
-            ? 'rgba(0, 0, 0, 0.9)'
+            ? '#1a1a1a'
             : 'linear-gradient(135deg, #E54B1E 0%, #CC0D3F 100%)',
-          border: isExpanded
-            ? '1px solid rgba(229, 75, 30, 0.4)'
-            : '1px solid transparent',
+          border: 'none',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           cursor: 'pointer',
           position: 'relative',
           overflow: 'hidden',
-          boxShadow: isExpanded
-            ? '0 4px 20px rgba(0, 0, 0, 0.4)'
-            : '0 4px 24px rgba(229, 75, 30, 0.4)',
+          boxShadow: 'none',
           transition: 'all 0.3s ease',
         }}
       >
