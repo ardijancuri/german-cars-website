@@ -1,33 +1,61 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Palette, CheckCircle } from 'lucide-react'
+import { CarFront, CheckCircle, Award } from 'lucide-react'
 import SEO from '../../components/SEO'
 
 const benefits = [
-  'Unbegrenzte Farbauswahl',
-  'Schutz des Originallacks',
-  'Jederzeit reversibel',
-  'Individuelle Designs möglich',
-  'Matt, Glanz, Satin, Chrom und mehr',
-  'Wertsteigerung durch Unikat-Status',
+  'Kratzerbeseitigung & Lackkorrektur',
+  'Dellenentfernung (PDR)',
+  'Komplette Innenraumaufbereitung',
+  'Polsterflecken & Verschmutzungen',
+  'Lackreparatur & Spot-Repair',
+  'Rückgabe-ready - keine Nachzahlung',
 ]
 
-const finishes = [
-  { name: 'Glanz', description: 'Klassischer Hochglanz-Look', image: '/images/lambo-car2.jpeg' },
-  { name: 'Matt', description: 'Elegante matte Oberfläche', image: '/images/car-wrapping.jpeg' },
-  { name: 'Satin', description: 'Seidiger Halbglanz', image: '/images/lambo-car1.jpeg' },
-  { name: 'Chrom', description: 'Spiegelnde Chromoptik', image: '/images/porche-car.jpeg' },
+const packages = [
+  {
+    name: 'Basic Rückgabe',
+    description: 'Grundaufbereitung',
+    features: [
+      'Außenwäsche & Politur',
+      'Innenraumreinigung',
+      'Leichte Kratzer entfernen',
+      'Scheibenreinigung',
+    ],
+  },
+  {
+    name: 'Premium Rückgabe',
+    description: 'Umfassende Aufbereitung',
+    features: [
+      'Basic Rückgabe +',
+      'Intensive Lackkorrektur',
+      'Polster-Tiefenreinigung',
+      'Kunststoffreparatur',
+      'Felgenaufbereitung',
+    ],
+  },
+  {
+    name: 'Sorglos Paket',
+    description: 'Rundum-Restaurierung',
+    features: [
+      'Premium Rückgabe +',
+      'Dellenentfernung (PDR)',
+      'Spot-Repair Lackierung',
+      'Lederreparatur',
+      'Geruchsneutralisierung',
+    ],
+  },
 ]
 
-export default function CarWrapping() {
+export default function LeaseReturn() {
   return (
     <div className="pt-20">
       <SEO
-        title="Car Wrapping - Fahrzeugfolierung"
-        description="Professionelles Car Wrapping bei Autopflege Aria. Unbegrenzte Farbauswahl, reversible Vollfolierung und Teilfolierung. Matt, Glanz, Satin, Chrom und individuelle Designs."
-        keywords="Car Wrapping, Fahrzeugfolierung, Vollfolierung, Teilfolierung, Autofolierung, Matt Folie, Glanz Folie, Satin Folie, Chrom Folierung, Design Wrapping"
-        path="/car-wrapping"
-        image="/images/car-wrapping.jpeg"
+        title="Leasing Rückläufer - Aufbereitung für die Rückgabe"
+        description="Leasing Rückläufer Aufbereitung bei Autopflege Aria. Kratzer, Dellen, Innenraum - wir machen Ihr Leasingfahrzeug rückgabe-ready und vermeiden Nachzahlungen."
+        keywords="Leasing Rückläufer, Leasing Rückgabe, Leasingfahrzeug Aufbereitung, Kratzer Leasing, Dellen Leasing, Rückgabe Vorbereitung"
+        path="/leasing-ruecklaeufer"
+        image="/images/herosection1.jpeg"
       />
       {/* Hero Section */}
       <section
@@ -40,8 +68,8 @@ export default function CarWrapping() {
       >
         <div className="absolute inset-0">
           <img
-            src="/images/car-wraping.jpg"
-            alt="Car Wrapping"
+            src="/images/herosection1.jpeg"
+            alt="Leasing Rückläufer"
             className="w-full h-full object-cover"
           />
           <div
@@ -85,7 +113,7 @@ export default function CarWrapping() {
                   justifyContent: 'center',
                 }}
               >
-                <Palette style={{ height: '20px', width: '20px', color: '#ffffff' }} />
+                <CarFront style={{ height: '20px', width: '20px', color: '#ffffff' }} />
               </div>
               <span
                 style={{
@@ -95,7 +123,7 @@ export default function CarWrapping() {
                   letterSpacing: '0.05em',
                 }}
               >
-                Car Wrapping
+                Leasing Rückläufer
               </span>
             </div>
             <h1
@@ -107,8 +135,8 @@ export default function CarWrapping() {
                 lineHeight: 1.1,
               }}
             >
-              <span style={{ color: '#ffffff' }}>Individuelle </span>
-              <span className="gradient-text">Fahrzeugfolierung</span>
+              <span style={{ color: '#ffffff' }}>Leasing </span>
+              <span className="gradient-text">Rückläufer</span>
             </h1>
             <p
               style={{
@@ -118,8 +146,8 @@ export default function CarWrapping() {
                 marginBottom: '32px',
               }}
             >
-              Verleihen Sie Ihrem Fahrzeug einen völlig neuen Look. Mit Premium-Folien von
-              3M, Avery Dennison und Inozetek realisieren wir Ihre Vorstellungen.
+              Vermeiden Sie hohe Nachzahlungen bei der Leasingrückgabe. Wir bereiten Ihr
+              Fahrzeug professionell auf und sorgen für eine reibungslose Rückgabe.
             </p>
             <Link to="/kontakt" className="btn-primary">
               Angebot anfordern
@@ -199,7 +227,7 @@ export default function CarWrapping() {
             >
               <img
                 src="/images/mercedes-car.jpeg"
-                alt="Car Wrapping Prozess"
+                alt="Leasing Rückgabe Aufbereitung"
                 className="img-zoom"
                 style={{
                   width: '100%',
@@ -222,7 +250,7 @@ export default function CarWrapping() {
         </div>
       </section>
 
-      {/* Finishes Gallery */}
+      {/* Packages Section */}
       <section
         style={{
           padding: '80px 0',
@@ -259,7 +287,7 @@ export default function CarWrapping() {
                 color: '#ffffff',
               }}
             >
-              Oberflächen & Finishes
+              Unsere Pakete
             </h2>
             <p
               style={{
@@ -271,78 +299,83 @@ export default function CarWrapping() {
               }}
               className="lg:text-lg"
             >
-              Von klassisch bis ausgefallen - wir bieten eine Vielzahl von Oberflächen für Ihren individuellen Stil.
+              Wählen Sie das passende Paket für Ihre Leasingrückgabe.
             </p>
           </motion.div>
 
           <div
             style={{ gap: '16px' }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6"
+            className="grid grid-cols-1 md:grid-cols-3 lg:gap-6"
           >
-            {finishes.map((finish, index) => (
+            {packages.map((pkg, index) => (
               <motion.div
-                key={finish.name}
+                key={pkg.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group"
                 style={{
-                  position: 'relative',
-                  aspectRatio: '3/4',
+                  backgroundColor: 'rgba(22, 22, 22, 0.6)',
                   borderRadius: '12px',
-                  overflow: 'hidden',
-                  cursor: 'pointer',
-                  transition: 'transform 0.3s ease',
+                  padding: '24px',
+                  transition: 'all 0.3s ease',
                 }}
+                className="sm:p-5 lg:p-6"
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-8px)'
+                  e.currentTarget.style.backgroundColor = 'rgba(22, 22, 22, 0.9)'
+                  e.currentTarget.style.transform = 'translateY(-4px)'
                 }}
                 onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(22, 22, 22, 0.6)'
                   e.currentTarget.style.transform = 'translateY(0)'
                 }}
               >
-                <img
-                  src={finish.image}
-                  alt={finish.name}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    transition: 'transform 0.5s ease',
-                  }}
-                  className="group-hover:scale-110"
-                />
-                <div
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, transparent 100%)',
-                  }}
-                />
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    padding: '24px',
-                  }}
-                >
-                  <h3
+                <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+                  <div
+                    className="gradient-bg"
                     style={{
-                      fontSize: '20px',
-                      fontWeight: 700,
-                      color: '#ffffff',
-                      marginBottom: '4px',
+                      width: '48px',
+                      height: '48px',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      margin: '0 auto 16px',
                     }}
                   >
-                    {finish.name}
+                    <Award style={{ height: '24px', width: '24px', color: '#ffffff' }} />
+                  </div>
+                  <h3
+                    style={{
+                      fontSize: '24px',
+                      fontWeight: 700,
+                      color: '#ffffff',
+                      marginBottom: '8px',
+                    }}
+                  >
+                    {pkg.name}
                   </h3>
-                  <p style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '14px' }}>
-                    {finish.description}
-                  </p>
+                  <p style={{ color: '#E54B1E' }}>{pkg.description}</p>
                 </div>
+                <ul style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
+                  {pkg.features.map((feature) => (
+                    <li
+                      key={feature}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        color: 'rgba(255, 255, 255, 0.6)',
+                      }}
+                    >
+                      <CheckCircle style={{ height: '16px', width: '16px', color: '#E54B1E' }} />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link to="/kontakt" className="btn-secondary w-full justify-center">
+                  Anfragen
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -382,7 +415,7 @@ export default function CarWrapping() {
                 color: '#ffffff',
               }}
             >
-              Bereit für Ihren neuen Look?
+              Leasing läuft aus?
             </h2>
             <p
               style={{
@@ -392,7 +425,7 @@ export default function CarWrapping() {
               }}
               className="lg:text-lg"
             >
-              Kontaktieren Sie uns für eine kostenlose Beratung und ein individuelles Angebot.
+              Kontaktieren Sie uns rechtzeitig für eine professionelle Aufbereitung vor der Rückgabe.
             </p>
             <Link to="/kontakt" className="btn-primary">
               Jetzt anfragen

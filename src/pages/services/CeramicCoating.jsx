@@ -1,44 +1,61 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Shield, CheckCircle, Award } from 'lucide-react'
+import { Droplets, CheckCircle, Award } from 'lucide-react'
 import SEO from '../../components/SEO'
 
 const benefits = [
-  'Schutz vor Steinschlägen und Kratzern',
-  'UV-beständig und vergilbungsfrei',
-  'Selbstheilende Oberfläche',
-  'Unsichtbarer Schutz',
-  '10 Jahre Garantie auf XPEL-Folien',
-  'Rückstandslose Entfernung möglich',
+  'Langzeitschutz bis zu 5 Jahre',
+  'Hydrophober Effekt - Wasser perlt ab',
+  'UV-Schutz gegen Verblassen',
+  'Chemischer Schutz vor Umwelteinflüssen',
+  'Intensive Glanzintensivierung',
+  'Extrem pflegeleichte Oberfläche',
 ]
 
 const packages = [
   {
-    name: 'Basis',
-    description: 'Frontpartie-Schutz',
-    features: ['Motorhaube', 'Stoßstange vorne', 'Scheinwerfer', 'Spiegel'],
+    name: 'Basis Keramik',
+    description: '1 Schicht - 1 Jahr Schutz',
+    features: [
+      'Lackaufbereitung',
+      '1-Schicht Keramikversiegelung',
+      'Hydrophober Effekt',
+      'UV-Schutz',
+    ],
   },
   {
-    name: 'Premium',
-    description: 'Erweiterter Schutz',
-    features: ['Basis-Paket +', 'Kotflügel vorne', 'A-Säulen', 'Türkanten', 'Schweller'],
+    name: 'Premium Keramik',
+    description: '2 Schichten - 3 Jahre Schutz',
+    features: [
+      'Basis Keramik +',
+      '2-Schicht Keramikversiegelung',
+      'Felgenversiegelung',
+      'Scheibenversiegelung',
+      'Intensiverer Glanz',
+    ],
   },
   {
-    name: 'Ultimate',
-    description: 'Vollfolierung',
-    features: ['Komplettes Fahrzeug', 'Alle lackierten Teile', 'Einstiegsleisten', 'Türgriffe'],
+    name: 'Ultimate Keramik',
+    description: '3+ Schichten - 5 Jahre Schutz',
+    features: [
+      'Premium Keramik +',
+      '3-Schicht Keramikversiegelung',
+      'Lackkorrektur inklusive',
+      'Komplettversiegelung',
+      'Pflegeset inklusive',
+    ],
   },
 ]
 
-export default function PaintProtection() {
+export default function CeramicCoating() {
   return (
     <div className="pt-20">
       <SEO
-        title="XPEL PPF Lackschutzfolie"
-        description="XPEL PPF Lackschutzfolie bei Autopflege Aria. Schutz vor Steinschlägen und Kratzern, selbstheilende Oberfläche, unsichtbarer Lackschutz mit 10 Jahren Garantie."
-        keywords="Lackschutzfolie, XPEL PPF, Paint Protection Film, Steinschlagschutz, Lackschutz, Schutzfolie, selbstheilend, UV-Schutz, Autopflege"
-        path="/lackschutz"
-        image="/images/Lackschutzfolie.jpeg"
+        title="Keramik Beschichtung - Langzeitschutz"
+        description="Professionelle Keramik Beschichtung bei Autopflege Aria. Langzeitschutz bis 5 Jahre, hydrophober Effekt, UV-Schutz und intensive Glanzversiegelung."
+        keywords="Keramik Beschichtung, Keramikversiegelung, Ceramic Coating, Lackschutz, Hydrophob, UV-Schutz, Langzeitversiegelung, Glanzversiegelung"
+        path="/keramik-beschichtung"
+        image="/images/porche-car.jpeg"
       />
       {/* Hero Section */}
       <section
@@ -51,8 +68,8 @@ export default function PaintProtection() {
       >
         <div className="absolute inset-0">
           <img
-            src="/images/porche-car1.jpeg"
-            alt="Lackschutzfolie"
+            src="/images/porche-car.jpeg"
+            alt="Keramik Beschichtung"
             className="w-full h-full object-cover"
           />
           <div
@@ -96,7 +113,7 @@ export default function PaintProtection() {
                   justifyContent: 'center',
                 }}
               >
-                <Shield style={{ height: '20px', width: '20px', color: '#ffffff' }} />
+                <Droplets style={{ height: '20px', width: '20px', color: '#ffffff' }} />
               </div>
               <span
                 style={{
@@ -106,7 +123,7 @@ export default function PaintProtection() {
                   letterSpacing: '0.05em',
                 }}
               >
-                Lackschutz
+                Keramik Beschichtung
               </span>
             </div>
             <h1
@@ -118,8 +135,8 @@ export default function PaintProtection() {
                 lineHeight: 1.1,
               }}
             >
-              <span style={{ color: '#ffffff' }}>XPEL PPF </span>
-              <span className="gradient-text">Lackschutzfolie</span>
+              <span style={{ color: '#ffffff' }}>Keramik </span>
+              <span className="gradient-text">Beschichtung</span>
             </h1>
             <p
               style={{
@@ -129,8 +146,8 @@ export default function PaintProtection() {
                 marginBottom: '32px',
               }}
             >
-              Schützen Sie Ihren Lack mit der weltweit führenden Lackschutzfolie. XPEL PPF bietet
-              unsichtbaren Schutz vor Steinschlägen, Kratzern und Umwelteinflüssen.
+              Ultimativer Lackschutz durch professionelle Keramikversiegelung. Langanhaltender
+              Glanz und Schutz vor Umwelteinflüssen für bis zu 5 Jahre.
             </p>
             <Link to="/kontakt" className="btn-primary">
               Angebot anfordern
@@ -209,8 +226,8 @@ export default function PaintProtection() {
               }}
             >
               <img
-                src="/images/Lackschutzfolie.jpeg"
-                alt="PPF Anwendung"
+                src="/images/bmw-car.jpeg"
+                alt="Keramik Beschichtung Ergebnis"
                 className="img-zoom"
                 style={{
                   width: '100%',
@@ -282,7 +299,7 @@ export default function PaintProtection() {
               }}
               className="lg:text-lg"
             >
-              Wählen Sie das passende Schutzpaket für Ihr Fahrzeug.
+              Wählen Sie das passende Keramik-Paket für Ihr Fahrzeug.
             </p>
           </motion.div>
 
@@ -365,73 +382,11 @@ export default function PaintProtection() {
         </div>
       </section>
 
-      {/* XPEL Certification */}
-      <section
-        style={{
-          padding: '64px 0',
-          backgroundColor: '#161616',
-        }}
-      >
-        <div
-          style={{
-            maxWidth: '1400px',
-            margin: '0 auto',
-            padding: '0 24px',
-          }}
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '16px',
-              textAlign: 'center',
-            }}
-            className="md:flex-row md:text-left md:gap-8"
-          >
-            <div
-              className="gradient-bg"
-              style={{
-                width: '64px',
-                height: '64px',
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexShrink: 0,
-              }}
-            >
-              <Award style={{ height: '32px', width: '32px', color: '#ffffff' }} />
-            </div>
-            <div>
-              <h3
-                style={{
-                  fontSize: '20px',
-                  fontWeight: 700,
-                  color: '#ffffff',
-                  marginBottom: '8px',
-                }}
-              >
-                XPEL Zertifizierter Installateur
-              </h3>
-              <p style={{ color: 'rgba(255, 255, 255, 0.6)' }}>
-                Als zertifizierter XPEL-Partner garantieren wir höchste Qualität und professionelle Installation.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section
         style={{
           padding: '80px 0',
-          backgroundColor: '#000000',
+          backgroundColor: '#161616',
         }}
         className="lg:py-28"
       >
@@ -460,7 +415,7 @@ export default function PaintProtection() {
                 color: '#ffffff',
               }}
             >
-              Bereit für maximalen Schutz?
+              Bereit für ultimativen Schutz?
             </h2>
             <p
               style={{

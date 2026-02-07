@@ -3,9 +3,13 @@ import { Instagram, Facebook, Youtube } from 'lucide-react'
 
 const footerLinks = {
   services: [
-    { name: 'XPEL-PPF / Lackschutzfolie', path: '/lackschutz' },
-    { name: 'Car-Wrapping', path: '/car-wrapping' },
-    { name: 'Detailing', path: '/detailing' },
+    { name: 'Lackveredelung', path: '/lackveredelung' },
+    { name: 'Keramik Beschichtung', path: '/keramik-beschichtung' },
+    { name: 'Felgen Beschichtung', path: '/felgen-beschichtung' },
+    { name: 'Kratzer Entfernung', path: '/kratzer-entfernung' },
+    { name: 'Dellenentfernung', path: '/dellenentfernung' },
+    { name: 'Interieur', path: '/interieur' },
+    { name: 'Leasing Rückläufer', path: '/leasing-ruecklaeufer' },
     { name: 'Scheibentönung', path: '/scheibentoenung' },
   ],
   company: [

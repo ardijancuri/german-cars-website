@@ -1,44 +1,73 @@
-import { motion } from 'framer-motion'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper/modules'
+import { Autoplay, Pagination, EffectCoverflow } from 'swiper/modules'
+import { motion } from 'framer-motion'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import 'swiper/css/effect-coverflow'
 
 const services = [
   {
-    title: 'Lackschutz',
-    description: 'XPEL PPF Schutzfolien schützen Ihren Lack vor Steinschlägen, Kratzern und Umwelteinflüssen.',
+    title: 'Lackveredelung',
+    description: 'Professionelle Lackaufbereitung, Politur und Versiegelung für neuwertigen Glanz.',
+    image: '/images/detailing.jpeg',
+    link: '/lackveredelung',
+  },
+  {
+    title: 'Keramik Beschichtung',
+    description: 'Langzeitschutz durch professionelle Keramikversiegelung mit hydrophobem Effekt.',
+    image: '/images/porche-car.jpeg',
+    link: '/keramik-beschichtung',
+  },
+  {
+    title: 'Felgen Beschichtung',
+    description: 'Hochwertige Felgenbeschichtung für optimalen Schutz vor Bremsstaub und Korrosion.',
+    image: '/images/lambo-car1.jpeg',
+    link: '/felgen-beschichtung',
+  },
+  {
+    title: 'Kratzer Entfernung',
+    description: 'Professionelle Kratzerentfernung und Lackreparatur - farbtongenau und werterhaltend.',
     image: '/images/porche-car1.jpeg',
-    link: '/lackschutz',
+    link: '/kratzer-entfernung',
+  },
+  {
+    title: 'Dellenentfernung',
+    description: 'Lackschonende Dellenentfernung mit modernster PDR-Technik ohne Neulackierung.',
+    image: '/images/mercedes-car.jpeg',
+    link: '/dellenentfernung',
+  },
+  {
+    title: 'Interieur',
+    description: 'Professionelle Innenraumaufbereitung - Lederreinigung, Textilpflege und Tiefenreinigung.',
+    image: '/images/lambo-car.jpeg',
+    link: '/interieur',
+  },
+  {
+    title: 'Leasing Rückläufer',
+    description: 'Komplette Fahrzeugaufbereitung für eine reibungslose Leasingrückgabe ohne Nachzahlung.',
+    image: '/images/herosection1.jpeg',
+    link: '/leasing-ruecklaeufer',
   },
   {
     title: 'Scheibentönung',
     description: 'Professionelle Scheibentönung für mehr Privatsphäre, UV-Schutz und eine elegante Optik.',
-    image: '/images/683e6a.jpeg',
+    image: '/images/lambo-car2.jpeg',
     link: '/scheibentoenung',
-  },
-  {
-    title: 'Detailing',
-    description: 'High-End Fahrzeugaufbereitung mit Premium-Produkten für ein makelloses Finish.',
-    image: '/images/detailing.jpeg',
-    link: '/detailing',
-  },
-  {
-    title: 'Car Wrapping',
-    description: 'Individuelle Fahrzeugfolierung für einzigartige Designs und Farbwechsel.',
-    image: '/images/car-wraping.jpg',
-    link: '/car-wrapping',
   },
 ]
 
 export default function Services() {
+  const [swiperInstance, setSwiperInstance] = useState(null)
+
   return (
     <section
       style={{
         padding: '80px 0',
         backgroundColor: '#000000',
+        overflow: 'hidden',
       }}
       className="lg:py-28"
     >
@@ -49,7 +78,7 @@ export default function Services() {
           padding: '0 24px',
         }}
       >
-        {/* Section Header with decorated lines */}
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -57,9 +86,9 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           style={{
             textAlign: 'center',
-            marginBottom: '56px',
+            marginBottom: '40px',
           }}
-          className="lg:mb-20"
+          className="sm:mb-14 lg:mb-16"
         >
           <h2
             className="headline-decorated"
@@ -87,245 +116,179 @@ export default function Services() {
             Besondere Autos verdienen das Besondere. Entdecken Sie unser umfassendes Angebot für Ihr Fahrzeug.
           </p>
         </motion.div>
+      </div>
 
-        {/* Mobile Slider - visible only on mobile */}
-        <div className="block sm:hidden" style={{ margin: '0 -24px' }}>
-          <Swiper
-            modules={[Pagination]}
-            slidesPerView={1.2}
-            spaceBetween={16}
-            centeredSlides={true}
-            grabCursor={true}
-            pagination={{
-              clickable: true,
-              el: '.services-pagination',
-            }}
-            style={{ padding: '0 24px 16px' }}
-          >
-            {services.map((service, index) => (
-              <SwiperSlide key={service.title}>
-                <Link
-                  to={service.link}
-                  className="group"
+      {/* Services Coverflow Slider */}
+      <Swiper
+        modules={[Autoplay, Pagination, EffectCoverflow]}
+        effect="coverflow"
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={1.2}
+        spaceBetween={16}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 2.5,
+          slideShadows: false,
+        }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+          el: '.services-pagination',
+        }}
+        loop={true}
+        onSwiper={setSwiperInstance}
+        breakpoints={{
+          640: {
+            slidesPerView: 1.2,
+            spaceBetween: 18,
+          },
+          768: {
+            slidesPerView: 1.5,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 1.8,
+            spaceBetween: 22,
+          },
+          1280: {
+            slidesPerView: 2.4,
+            spaceBetween: 22,
+          },
+        }}
+        style={{ padding: '0 24px 48px' }}
+      >
+        {services.map((service, index) => (
+          <SwiperSlide key={service.title}>
+            <Link
+              to={service.link}
+              className="group"
+              style={{
+                display: 'block',
+                position: 'relative',
+                aspectRatio: '4/3',
+                borderRadius: '12px',
+                overflow: 'hidden',
+                backgroundColor: '#161616',
+              }}
+              onClick={() => {
+                if (swiperInstance) {
+                  swiperInstance.slideToLoop(index)
+                }
+              }}
+            >
+              {/* Image */}
+              <img
+                src={service.image}
+                alt={service.title}
+                className="img-zoom"
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                }}
+              />
+
+              {/* Gradient Overlay */}
+              <div className="service-card-overlay" style={{ position: 'absolute', inset: 0 }} />
+
+              {/* Large Background Number */}
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '10px',
+                  right: '15px',
+                  fontSize: 'clamp(60px, 15vw, 100px)',
+                  fontWeight: 900,
+                  fontFamily: 'Orbitron, sans-serif',
+                  color: 'rgba(255, 255, 255, 0.5)',
+                  lineHeight: 1,
+                  userSelect: 'none',
+                  zIndex: 1,
+                }}
+                className="lg:text-[120px]"
+              >
+                {String(index + 1).padStart(2, '0')}
+              </div>
+
+              {/* Content */}
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'flex-end',
+                  padding: '16px',
+                }}
+                className="sm:p-5 lg:p-6"
+              >
+                <h3
                   style={{
-                    display: 'block',
-                    position: 'relative',
-                    aspectRatio: '4/3',
-                    borderRadius: '12px',
-                    overflow: 'hidden',
-                    backgroundColor: '#161616',
+                    color: '#ffffff',
+                    fontSize: 'clamp(16px, 4vw, 20px)',
+                    fontWeight: 700,
+                    marginBottom: '8px',
+                    transition: 'color 0.3s ease',
+                  }}
+                  className="lg:text-2xl group-hover:text-accent-orange"
+                >
+                  {service.title}
+                </h3>
+                <p
+                  className="line-clamp-2"
+                  style={{
+                    color: 'rgba(255, 255, 255, 0.6)',
+                    fontSize: '14px',
+                    lineHeight: 1.6,
+                    marginBottom: '16px',
                   }}
                 >
-                  {/* Image */}
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="img-zoom"
+                  {service.description}
+                </p>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    color: '#E54B1E',
+                    fontSize: '14px',
+                    fontWeight: 600,
+                  }}
+                >
+                  <span>Mehr erfahren</span>
+                  <ArrowRight
+                    className="group-hover:translate-x-1"
                     style={{
-                      position: 'absolute',
-                      inset: 0,
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
+                      marginLeft: '8px',
+                      height: '16px',
+                      width: '16px',
+                      transition: 'transform 0.3s ease',
                     }}
                   />
-
-                  {/* Gradient Overlay */}
-                  <div className="service-card-overlay" style={{ position: 'absolute', inset: 0 }} />
-
-                  {/* Large Background Number */}
-                  <div
-                    style={{
-                      position: 'absolute',
-                      top: '10px',
-                      right: '15px',
-                      fontSize: 'clamp(60px, 15vw, 100px)',
-                      fontWeight: 900,
-                      fontFamily: 'Orbitron, sans-serif',
-                      color: 'rgba(255, 255, 255, 0.5)',
-                      lineHeight: 1,
-                      userSelect: 'none',
-                      zIndex: 1,
-                    }}
-                  >
-                    {String(index + 1).padStart(2, '0')}
-                  </div>
-
-                  {/* Content */}
-                  <div
-                    style={{
-                      position: 'absolute',
-                      inset: 0,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'flex-end',
-                      padding: '16px',
-                    }}
-                  >
-                    <h3
-                      style={{
-                        color: '#ffffff',
-                        fontSize: 'clamp(16px, 4vw, 20px)',
-                        fontWeight: 700,
-                        marginBottom: '8px',
-                        transition: 'color 0.3s ease',
-                      }}
-                      className="group-hover:text-accent-orange"
-                    >
-                      {service.title}
-                    </h3>
-                    <p
-                      className="line-clamp-2"
-                      style={{
-                        color: 'rgba(255, 255, 255, 0.6)',
-                        fontSize: '14px',
-                        lineHeight: 1.6,
-                      }}
-                    >
-                      {service.description}
-                    </p>
-                  </div>
-                </Link>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-          {/* Pagination Dots */}
-          <div
-            className="services-pagination"
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '8px',
-              marginTop: '24px',
-            }}
-          />
-        </div>
-
-        {/* Services Grid - 2x2 on tablet/desktop, hidden on mobile */}
-        <div
-          style={{
-            gap: '16px',
-          }}
-          className="hidden sm:grid sm:grid-cols-2 lg:gap-6"
-        >
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <Link
-                to={service.link}
-                className="group"
-                style={{
-                  display: 'block',
-                  position: 'relative',
-                  aspectRatio: '4/3',
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  backgroundColor: '#161616',
-                }}
-              >
-                {/* Image */}
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="img-zoom"
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-
-                {/* Gradient Overlay */}
-                <div className="service-card-overlay" style={{ position: 'absolute', inset: 0 }} />
-
-                {/* Large Background Number */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '10px',
-                    right: '15px',
-                    fontSize: 'clamp(60px, 15vw, 100px)',
-                    fontWeight: 900,
-                    fontFamily: 'Orbitron, sans-serif',
-                    color: 'rgba(255, 255, 255, 0.5)',
-                    lineHeight: 1,
-                    userSelect: 'none',
-                    zIndex: 1,
-                  }}
-                  className="lg:text-[120px]"
-                >
-                  {String(index + 1).padStart(2, '0')}
                 </div>
+              </div>
+            </Link>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
-                {/* Content */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'flex-end',
-                    padding: '16px',
-                  }}
-                  className="sm:p-5 lg:p-6"
-                >
-                  <h3
-                    style={{
-                      color: '#ffffff',
-                      fontSize: 'clamp(16px, 4vw, 20px)',
-                      fontWeight: 700,
-                      marginBottom: '8px',
-                      transition: 'color 0.3s ease',
-                    }}
-                    className="lg:text-2xl group-hover:text-accent-orange"
-                  >
-                    {service.title}
-                  </h3>
-                  <p
-                    className="line-clamp-2 hidden sm:block"
-                    style={{
-                      color: 'rgba(255, 255, 255, 0.6)',
-                      fontSize: '14px',
-                      lineHeight: 1.6,
-                      marginBottom: '16px',
-                    }}
-                  >
-                    {service.description}
-                  </p>
-                  <div
-                    className="hidden sm:flex"
-                    style={{
-                      alignItems: 'center',
-                      color: '#E54B1E',
-                      fontSize: '14px',
-                      fontWeight: 600,
-                    }}
-                  >
-                    <span>Mehr erfahren</span>
-                    <ArrowRight
-                      className="group-hover:translate-x-1"
-                      style={{
-                        marginLeft: '8px',
-                        height: '16px',
-                        width: '16px',
-                        transition: 'transform 0.3s ease',
-                      }}
-                    />
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+      {/* Pagination Dots */}
+      <div
+        className="services-pagination"
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '8px',
+          marginTop: '32px',
+        }}
+      />
     </section>
   )
 }

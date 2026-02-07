@@ -1,62 +1,61 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Sparkles, CheckCircle, Award } from 'lucide-react'
+import { Armchair, CheckCircle, Award } from 'lucide-react'
 import SEO from '../../components/SEO'
 
 const benefits = [
-  'Tiefenreinigung innen und außen',
-  'Lackaufbereitung und Politur',
-  'Keramikversiegelung',
-  'Lederreinigung und -pflege',
-  'Motorwäsche',
+  'Professionelle Lederreinigung & -pflege',
+  'Textil- & Polsterreinigung',
+  'Dachhimmel-Reinigung',
+  'Kunststoffpflege & -aufbereitung',
   'Geruchsneutralisierung',
+  'Tiefenreinigung aller Oberflächen',
 ]
 
 const packages = [
   {
-    name: 'Basic Detail',
+    name: 'Basic Interieur',
     description: 'Gründliche Reinigung',
     features: [
-      'Handwäsche außen',
-      'Felgenreinigung',
-      'Innenraumreinigung',
-      'Staubsaugen',
-      'Scheibenreinigung',
-    ],
-  },
-  {
-    name: 'Premium Detail',
-    description: 'Umfassende Aufbereitung',
-    features: [
-      'Basic Detail +',
-      'Lackpolitur (1-Stufen)',
-      'Lederreinigung',
+      'Staubsaugen komplett',
+      'Oberflächenreinigung',
+      'Scheibenreinigung innen',
       'Kunststoffpflege',
-      'Reifenpflege',
     ],
   },
   {
-    name: 'Ultimate Detail',
-    description: 'Showroom-Zustand',
+    name: 'Premium Interieur',
+    description: 'Intensive Aufbereitung',
     features: [
-      'Premium Detail +',
-      'Lackkorrektur (2-Stufen)',
-      'Keramikversiegelung',
-      'Motorwäsche',
-      'Glasversiegelung',
+      'Basic Interieur +',
+      'Leder-/Textilreinigung',
+      'Tiefenreinigung Polster',
+      'Geruchsneutralisierung',
+      'Einstiegsleisten',
+    ],
+  },
+  {
+    name: 'Ultimate Interieur',
+    description: 'Komplett-Restaurierung',
+    features: [
+      'Premium Interieur +',
+      'Dachhimmel-Reinigung',
+      'Lederpflege & Imprägnierung',
+      'Ozonbehandlung',
+      'Langzeit-Schutzversiegelung',
     ],
   },
 ]
 
-export default function Detailing() {
+export default function Interior() {
   return (
     <div className="pt-20">
       <SEO
-        title="Detailing - Professionelle Autoaufbereitung"
-        description="Professionelles Auto Detailing bei Autopflege Aria. Tiefenreinigung, Lackaufbereitung, Keramikversiegelung, Lederreinigung und Motorwäsche für Ihr Fahrzeug."
-        keywords="Detailing, Autoaufbereitung, Keramikversiegelung, Lackaufbereitung, Politur, Lederreinigung, Motorwäsche, Fahrzeugpflege, Innenraumreinigung"
-        path="/detailing"
-        image="/images/detailing.jpeg"
+        title="Interieur Aufbereitung - Innenraumpflege"
+        description="Professionelle Interieur Aufbereitung bei Autopflege Aria. Lederreinigung, Textilpflege, Dachhimmel, Geruchsneutralisierung und Tiefenreinigung."
+        keywords="Interieur, Innenraumreinigung, Lederreinigung, Lederpflege, Textilreinigung, Polsterreinigung, Dachhimmel, Geruchsentfernung, Auto Innenraum"
+        path="/interieur"
+        image="/images/lambo-car.jpeg"
       />
       {/* Hero Section */}
       <section
@@ -69,8 +68,8 @@ export default function Detailing() {
       >
         <div className="absolute inset-0">
           <img
-            src="/images/detailing.jpeg"
-            alt="Detailing"
+            src="/images/lambo-car.jpeg"
+            alt="Interieur Aufbereitung"
             className="w-full h-full object-cover"
           />
           <div
@@ -114,7 +113,7 @@ export default function Detailing() {
                   justifyContent: 'center',
                 }}
               >
-                <Sparkles style={{ height: '20px', width: '20px', color: '#ffffff' }} />
+                <Armchair style={{ height: '20px', width: '20px', color: '#ffffff' }} />
               </div>
               <span
                 style={{
@@ -124,7 +123,7 @@ export default function Detailing() {
                   letterSpacing: '0.05em',
                 }}
               >
-                Detailing
+                Interieur
               </span>
             </div>
             <h1
@@ -136,8 +135,8 @@ export default function Detailing() {
                 lineHeight: 1.1,
               }}
             >
-              <span style={{ color: '#ffffff' }}>High-End </span>
-              <span className="gradient-text">Fahrzeugaufbereitung</span>
+              <span style={{ color: '#ffffff' }}>Interieur </span>
+              <span className="gradient-text">Aufbereitung</span>
             </h1>
             <p
               style={{
@@ -147,8 +146,8 @@ export default function Detailing() {
                 marginBottom: '32px',
               }}
             >
-              Professionelle Fahrzeugaufbereitung mit Premium-Produkten. Von der gründlichen
-              Reinigung bis zur Keramikversiegelung - für ein makelloses Finish.
+              Ein sauberer Innenraum steigert nicht nur den Komfort, sondern auch den Wert
+              Ihres Fahrzeugs. Wir bringen Ihr Interieur auf Neuwagen-Niveau.
             </p>
             <Link to="/kontakt" className="btn-primary">
               Angebot anfordern
@@ -227,8 +226,8 @@ export default function Detailing() {
               }}
             >
               <img
-                src="/images/herosection1.jpeg"
-                alt="Detailing Prozess"
+                src="/images/Lackschutzfolie.jpeg"
+                alt="Interieur Aufbereitung"
                 className="img-zoom"
                 style={{
                   width: '100%',
@@ -300,7 +299,7 @@ export default function Detailing() {
               }}
               className="lg:text-lg"
             >
-              Wählen Sie das passende Detailing-Paket für Ihr Fahrzeug.
+              Wählen Sie das passende Interieur-Paket für Ihr Fahrzeug.
             </p>
           </motion.div>
 
@@ -416,7 +415,7 @@ export default function Detailing() {
                 color: '#ffffff',
               }}
             >
-              Bereit für den Showroom-Glanz?
+              Frischer Innenraum gewünscht?
             </h2>
             <p
               style={{

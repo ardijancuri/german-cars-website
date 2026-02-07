@@ -7,27 +7,51 @@ import { faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons'
 
 const services = [
   {
-    name: 'XPEL-PPF / Lackschutzfolie',
-    path: '/lackschutz',
-    image: '/images/porche-car1.jpeg',
-    description: 'Schützen Sie Ihren Lack vor Steinschlägen'
-  },
-  {
-    name: 'Car-Wrapping',
-    path: '/car-wrapping',
-    image: '/images/car-wrapping.jpeg',
-    description: 'Individuelle Fahrzeugfolierung'
-  },
-  {
-    name: 'Detailing',
-    path: '/detailing',
+    name: 'Lackveredelung',
+    path: '/lackveredelung',
     image: '/images/detailing.jpeg',
-    description: 'High-End Fahrzeugaufbereitung'
+    description: 'Professionelle Politur & Lackaufbereitung'
+  },
+  {
+    name: 'Keramik Beschichtung',
+    path: '/keramik-beschichtung',
+    image: '/images/porche-car.jpeg',
+    description: 'Langzeitschutz mit Keramikversiegelung'
+  },
+  {
+    name: 'Felgen Beschichtung',
+    path: '/felgen-beschichtung',
+    image: '/images/lambo-car1.jpeg',
+    description: 'Professioneller Felgenschutz'
+  },
+  {
+    name: 'Kratzer Entfernung',
+    path: '/kratzer-entfernung',
+    image: '/images/car-wrapping.jpeg',
+    description: 'Kratzer professionell beseitigen'
+  },
+  {
+    name: 'Dellenentfernung',
+    path: '/dellenentfernung',
+    image: '/images/mercedes-car.jpeg',
+    description: 'Lackschonende PDR-Technik'
+  },
+  {
+    name: 'Interieur',
+    path: '/interieur',
+    image: '/images/lambo-car.jpeg',
+    description: 'Innenraum-Aufbereitung & Pflege'
+  },
+  {
+    name: 'Leasing Rückläufer',
+    path: '/leasing-ruecklaeufer',
+    image: '/images/herosection1.jpeg',
+    description: 'Aufbereitung für die Rückgabe'
   },
   {
     name: 'Scheibentönung',
     path: '/scheibentoenung',
-    image: '/images/lambo-car.jpeg',
+    image: '/images/lambo-car2.jpeg',
     description: 'Professionelle Scheibentönung'
   },
 ]
@@ -197,6 +221,8 @@ export default function Navbar() {
                         boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)',
                         zIndex: 40,
                         pointerEvents: 'auto',
+                        maxHeight: 'calc(100vh - 72px)',
+                        overflowY: 'auto',
                       }}
                     >
                     <div
