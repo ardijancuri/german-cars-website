@@ -308,8 +308,8 @@ export default function Footer() {
           }}
         >
           <p
-            style={{ color: 'rgba(255, 255, 255, 0.4)', fontSize: '14px', width: '100%', textAlign: 'center' }}
-            className="md:w-auto md:text-left"
+            style={{ color: 'rgba(255, 255, 255, 0.4)', fontSize: '14px', width: '100%' }}
+            className="md:w-auto"
           >
             &copy; {new Date().getFullYear()} Epic Cars. Betrieben von{' '}
             <a
