@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Truck, Award, Settings, Shield, Building2, Coffee } from 'lucide-react'
+import { Truck, Award, Settings, Shield, Building2 } from 'lucide-react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
 import 'swiper/css'
@@ -9,13 +9,13 @@ const fullServices = [
   {
     title: 'Transport',
     description: 'Geschlossener und gesicherter Fahrzeugtransport mit eigenem Anhänger. Abholung und Lieferung europaweit möglich.',
-    image: '/images/webseitetransport.jpg',
+    image: '/images/transport.webp',
     icon: Truck,
   },
   {
     title: 'Qualifikation',
     description: 'Jahrelange Erfahrung mit Premium-Fahrzeugen aller Marken. Zertifizierte XPEL-Installateure.',
-    image: '/images/epic-cars-service-qualifikation.jpg',
+    image: '/images/XPEL-Installateure.avif',
     icon: Award,
   },
   {
@@ -35,12 +35,6 @@ const fullServices = [
     description: 'Exklusive Fahrzeugübergabe in unserem Showroom mit Ambiente, Getränken und Musik.',
     image: '/images/mercedes-car.jpeg',
     icon: Building2,
-  },
-  {
-    title: 'Gästeservice',
-    description: 'Persönliche Betreuung, First-Look-Video und Dokumentation Ihres Fahrzeugs.',
-    image: '/images/gaesteservice.jpg',
-    icon: Coffee,
   },
 ]
 
