@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import SideContact from './components/layout/SideContact'
@@ -15,9 +16,18 @@ import Interior from './pages/services/Interior'
 import LeaseReturn from './pages/services/LeaseReturn'
 import WindowTinting from './pages/services/WindowTinting'
 
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+  return null
+}
+
 function App() {
   return (
     <div className="min-h-screen bg-primary-black">
+      <ScrollToTop />
       <Navbar />
       <main>
         <Routes>
