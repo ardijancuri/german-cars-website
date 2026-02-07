@@ -1,0 +1,5 @@
+<svg class="logo" role="img" aria-labelledby="logo-label">
+
+        <title id="logo-label">Keller Blechtechnik</title>
+        <use xlink:href="#logo"></use>
+    </svg>
