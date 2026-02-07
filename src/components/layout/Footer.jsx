@@ -305,16 +305,11 @@ export default function Footer() {
             borderTop: '1px solid rgba(255, 255, 255, 0.05)',
             marginTop: '48px',
             paddingTop: '32px',
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '16px',
           }}
+          className="flex flex-col items-center gap-4 md:flex-row md:justify-between"
         >
           <p
-            style={{ color: 'rgba(255, 255, 255, 0.4)', fontSize: '14px', width: '100%' }}
-            className="md:w-auto"
+            style={{ color: 'rgba(255, 255, 255, 0.4)', fontSize: '14px' }}
           >
             &copy; {new Date().getFullYear()} Autopflege Aria. Betrieben von{' '}
             <a
