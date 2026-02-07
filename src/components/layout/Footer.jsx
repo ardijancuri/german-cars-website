@@ -51,7 +51,7 @@ export default function Footer() {
           <div style={{ gridColumn: '1', position: 'relative' }} className="lg:col-span-1">
             <Link to="/" style={{ display: 'inline-block', marginBottom: '24px' }}>
               <img
-                src="/images/autopflege-logo.png"
+                src="/images/autopflege-logo.svg"
                 alt="Autopflege Aria"
                 style={{ height: '36px', width: 'auto' }}
               />

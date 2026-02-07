@@ -128,7 +128,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" style={{ flexShrink: 0, position: 'relative', zIndex: 10 }}>
             <img
-              src="/images/autopflege-logo.png"
+              src="/images/autopflege-logo.svg"
               alt="Autopflege Aria"
               style={{ height: '40px', width: 'auto' }}
             />
