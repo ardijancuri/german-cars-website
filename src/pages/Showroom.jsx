@@ -38,7 +38,7 @@ export default function Showroom() {
         <div className="absolute inset-0">
           <img
             src="/images/porche-car1.jpeg"
-            alt="Epic Cars Showroom"
+            alt="Autopflege Aria Showroom"
             style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }}
           />
           <div

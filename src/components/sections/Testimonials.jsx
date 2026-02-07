@@ -13,7 +13,7 @@ const testimonials = [
     image: '/images/testimonial-1.jpg',
   },
   {
-    quote: 'Seit Jahren vertraue ich Epic Cars mit meinen Fahrzeugen. Die Lackschutzfolie hat meinen Ferrari vor Steinschlägen bewahrt und das Car Wrapping meines Zweitwagens ist perfekt.',
+    quote: 'Seit Jahren vertraue ich Autopflege Aria mit meinen Fahrzeugen. Die Lackschutzfolie hat meinen Ferrari vor Steinschlägen bewahrt und das Car Wrapping meines Zweitwagens ist perfekt.',
     name: 'Thomas K.',
     vehicles: 'Ferrari 488, Mercedes AMG GT',
     image: '/images/testimonial-2.jpg',

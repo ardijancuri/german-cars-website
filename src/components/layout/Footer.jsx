@@ -64,7 +64,7 @@ export default function Footer() {
                 marginBottom: '28px',
               }}
             >
-              Protecting & Customising Epic Cars. Schutz, Optik, Performance - alles aus einer Hand.
+              Autopflege Aria - Professionelle Fahrzeugpflege. Schutz, Optik, Performance - alles aus einer Hand.
             </p>
             {/* Social Links */}
             <div style={{ display: 'flex', gap: '12px' }}>
@@ -257,12 +257,13 @@ export default function Footer() {
                 lineHeight: 1.7,
               }}
             >
-              <p style={{ marginBottom: '6px', fontWeight: 500 }}>Epic Cars GmbH</p>
-              <p style={{ marginBottom: '6px' }}>Musterstraße 123</p>
-              <p style={{ marginBottom: '20px' }}>12345 Musterstadt</p>
+              <p style={{ marginBottom: '6px', fontWeight: 500 }}>Autopflege Aria</p>
+              <p style={{ marginBottom: '6px' }}>Forchheimer Straße 17</p>
+              <p style={{ marginBottom: '6px' }}>79359 Riegel</p>
+              <p style={{ marginBottom: '20px' }}>Beim Car Wash Center</p>
               <p style={{ marginBottom: '10px' }}>
                 <a
-                  href="tel:+491234567890"
+                  href="tel:+4917672567199"
                   style={{
                     color: 'rgba(255, 255, 255, 0.6)',
                     textDecoration: 'none',
@@ -272,7 +273,7 @@ export default function Footer() {
                   onMouseEnter={(e) => e.target.style.color = '#E54B1E'}
                   onMouseLeave={(e) => e.target.style.color = 'rgba(255, 255, 255, 0.6)'}
                 >
-                  +49 123 456 7890
+                  0176 725 671 99
                 </a>
               </p>
               <p>
@@ -311,7 +312,7 @@ export default function Footer() {
             style={{ color: 'rgba(255, 255, 255, 0.4)', fontSize: '14px', width: '100%' }}
             className="md:w-auto"
           >
-            &copy; {new Date().getFullYear()} Epic Cars. Betrieben von{' '}
+            &copy; {new Date().getFullYear()} Autopflege Aria. Betrieben von{' '}
             <a
               href="https://oninova.net"
               target="_blank"

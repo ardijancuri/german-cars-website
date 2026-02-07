@@ -9,7 +9,7 @@ const heroSlides = [
   {
     image: '/images/herosection.jpeg',
     title: 'Protecting & Customising',
-    highlight: 'Epic Cars',
+    highlight: 'Autopflege Aria',
     subtitle: 'Schutz, Optik, Performance',
   },
   {

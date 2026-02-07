@@ -7,15 +7,15 @@ const contactOptions = [
     id: 'phone',
     icon: Phone,
     label: 'Anrufen',
-    value: '+49 123 456 7890',
-    href: 'tel:+491234567890',
+    value: '0176 725 671 99',
+    href: 'tel:+4917672567199',
   },
   {
     id: 'whatsapp',
     icon: MessageCircle,
     label: 'WhatsApp',
     value: 'Chat starten',
-    href: 'https://wa.me/491234567890',
+    href: 'https://wa.me/4917672567199',
   },
   {
     id: 'email',

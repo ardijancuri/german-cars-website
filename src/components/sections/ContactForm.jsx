@@ -178,7 +178,7 @@ export default function ContactForm() {
                 <div style={{ flex: 1 }}>
                   <h4 style={{ color: '#ffffff', fontWeight: 600, marginBottom: '4px', fontSize: '15px' }}>Telefon</h4>
                   <a
-                    href="tel:+491234567890"
+                    href="tel:+4917672567199"
                     style={{
                       color: 'rgba(255, 255, 255, 0.6)',
                       textDecoration: 'none',
@@ -188,7 +188,7 @@ export default function ContactForm() {
                     onMouseEnter={(e) => e.target.style.color = '#E54B1E'}
                     onMouseLeave={(e) => e.target.style.color = 'rgba(255, 255, 255, 0.6)'}
                   >
-                    +49 123 456 7890
+                    0176 725 671 99
                   </a>
                 </div>
               </div>
@@ -284,9 +284,10 @@ export default function ContactForm() {
                 <div style={{ flex: 1 }}>
                   <h4 style={{ color: '#ffffff', fontWeight: 600, marginBottom: '6px', fontSize: '15px' }}>Adresse</h4>
                   <p style={{ color: 'rgba(255, 255, 255, 0.6)', lineHeight: 1.6, fontSize: '15px' }}>
-                    Epic Cars GmbH<br />
-                    Musterstraße 123<br />
-                    12345 Musterstadt
+                    Autopflege Aria<br />
+                    Forchheimer Straße 17<br />
+                    79359 Riegel<br />
+                    Beim Car Wash Center
                   </p>
                 </div>
               </div>
@@ -393,7 +394,7 @@ export default function ContactForm() {
                     value={formData.phone}
                     onChange={handleChange}
                     style={inputStyle}
-                    placeholder="+49 123 456 7890"
+                    placeholder="0176 725 671 99"
                     onFocus={(e) => e.target.style.borderColor = '#E54B1E'}
                     onBlur={(e) => e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)'}
                   />

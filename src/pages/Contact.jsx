@@ -24,7 +24,7 @@ export default function Contact() {
         <div className="absolute inset-0">
           <img
             src="/images/bmw-car.jpeg"
-            alt="Epic Cars Kontakt"
+            alt="Autopflege Aria Kontakt"
             className="w-full h-full object-cover"
             style={{ opacity: 0.2 }}
           />
@@ -171,7 +171,7 @@ export default function Contact() {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Epic Cars Standort"
+              title="Autopflege Aria Standort"
             />
           </motion.div>
         </div>

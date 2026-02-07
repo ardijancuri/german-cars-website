@@ -33,7 +33,7 @@ export default function About() {
         <div className="absolute inset-0">
           <img
             src="/images/herosection.jpeg"
-            alt="Epic Cars Showroom"
+            alt="Autopflege Aria Showroom"
             style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }}
           />
           <div
@@ -100,7 +100,7 @@ export default function About() {
               }}
             >
               <span style={{ color: '#ffffff' }}>Über </span>
-              <span className="gradient-text">Epic Cars</span>
+              <span className="gradient-text">Autopflege Aria</span>
             </h1>
             <p
               style={{
@@ -183,7 +183,7 @@ export default function About() {
             >
               <img
                 src="/images/Lackschutzfolie.jpeg"
-                alt="Epic Cars Team"
+                alt="Autopflege Aria Team"
                 className="img-zoom"
                 style={{
                   width: '100%',
