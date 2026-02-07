@@ -14,9 +14,9 @@ const heroSlides = [
   },
   {
     image: '/images/herosection1.jpeg',
-    title: 'Premium',
-    highlight: 'Car Wrapping',
-    subtitle: 'Individuelle Designs für Ihr Fahrzeug',
+    title: 'Professionelle',
+    highlight: 'Leasing Rückläufer',
+    subtitle: 'Makellose Aufbereitung für die Fahrzeugrückgabe',
   },
   {
     image: '/images/porche-background1.avif',
