@@ -217,25 +217,51 @@ export default function ServiceHighlight() {
                   zIndex: isActive ? 20 : 10,
                 }}
               >
-                {/* Connecting line + Modal (to the left of pin) */}
+                {/* + / - Circle button */}
+                <button
+                  onClick={() => toggleSpot(spot.id)}
+                  style={{
+                    position: 'relative',
+                    width: '50px',
+                    height: '50px',
+                    borderRadius: '50%',
+                    backgroundColor: 'rgba(255, 255, 255, 0.15)',
+                    backdropFilter: 'blur(4px)',
+                    WebkitBackdropFilter: 'blur(4px)',
+                    border: '2px solid rgba(255, 255, 255, 0.6)',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#ffffff',
+                    zIndex: 20,
+                    padding: 0,
+                  }}
+                  aria-label={spot.title}
+                >
+                  {isActive ? (
+                    <Minus style={{ width: '22px', height: '22px', color: '#ffffff' }} />
+                  ) : (
+                    <Plus style={{ width: '20px', height: '20px' }} />
+                  )}
+                </button>
+
+                {/* Modal - pin sits in top-right corner */}
                 <div
                   className={`hotspot-container ${isActive ? 'hotspot-visible' : ''}`}
                   style={{
                     position: 'absolute',
-                    right: '100%',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    alignItems: 'center',
+                    top: '-12px',
+                    right: '-12px',
                     zIndex: 15,
                   }}
                 >
-                      {/* Modal card - blur + opacity on same element */}
                       <div
                         className={`hotspot-modal ${isActive ? 'hotspot-modal-visible' : ''}`}
                         style={{
                           width: '320px',
                           padding: '24px',
-                          marginRight: '0',
                         }}
                       >
                         {/* Title row */}
@@ -310,47 +336,7 @@ export default function ServiceHighlight() {
                           {spot.cta}
                         </Link>
                       </div>
-
-                      {/* Connecting line */}
-                      <div
-                        style={{
-                          width: '40px',
-                          height: '2px',
-                          backgroundColor: 'rgba(255, 255, 255, 0.5)',
-                          flexShrink: 0,
-                        }}
-                      />
                 </div>
-
-                {/* + / - Circle button */}
-                <button
-                  onClick={() => toggleSpot(spot.id)}
-                  style={{
-                    position: 'relative',
-                    width: '50px',
-                    height: '50px',
-                    borderRadius: '50%',
-                    backgroundColor: 'rgba(255, 255, 255, 0.15)',
-                    backdropFilter: 'blur(4px)',
-                    WebkitBackdropFilter: 'blur(4px)',
-                    border: '2px solid rgba(255, 255, 255, 0.6)',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#ffffff',
-                    zIndex: 2,
-                    padding: 0,
-                  }}
-                  aria-label={spot.title}
-                >
-                  {isActive ? (
-                    <Minus style={{ width: '22px', height: '22px', color: '#ffffff' }} />
-                  ) : (
-                    <Plus style={{ width: '20px', height: '20px' }} />
-                  )}
-                </button>
               </div>
             )
           })}
@@ -438,7 +424,7 @@ export default function ServiceHighlight() {
           display: none;
         }
         .hotspot-visible {
-          display: flex !important;
+          display: block !important;
         }
         .hotspot-modal {
           background: rgba(0, 0, 0, 0.4);
@@ -452,7 +438,12 @@ export default function ServiceHighlight() {
             min-height: 400px;
           }
           .service-highlight-header {
-            padding-top: 240px !important;
+            padding-top: 80px !important;
+          }
+        }
+        @media (min-width: 1440px) {
+          .service-highlight-header {
+            padding-top: 200px !important;
           }
         }
       `}</style>
