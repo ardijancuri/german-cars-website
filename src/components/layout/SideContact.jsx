@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Phone, MessageCircle, Mail } from 'lucide-react'
+import { Phone, MessageCircle, Mail, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const contactOptions = [
@@ -9,7 +9,6 @@ const contactOptions = [
     label: 'Anrufen',
     value: '+49 123 456 7890',
     href: 'tel:+491234567890',
-    color: 'bg-green-500',
   },
   {
     id: 'whatsapp',
@@ -17,7 +16,6 @@ const contactOptions = [
     label: 'WhatsApp',
     value: 'Chat starten',
     href: 'https://wa.me/491234567890',
-    color: 'bg-green-600',
   },
   {
     id: 'email',
@@ -25,7 +23,6 @@ const contactOptions = [
     label: 'E-Mail',
     value: 'info@epic-cars.de',
     href: 'mailto:info@epic-cars.de',
-    color: 'bg-accent-orange',
   },
 ]
 
@@ -35,51 +32,106 @@ export default function SideContact() {
 
   return (
     <div className="fixed right-4 bottom-4 md:right-8 md:bottom-8 z-40">
+      {/* Backdrop */}
+      <AnimatePresence>
+        {isExpanded && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0"
+            onClick={() => setIsExpanded(false)}
+          />
+        )}
+      </AnimatePresence>
+
       {/* Contact Options */}
       <AnimatePresence>
         {isExpanded && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, y: 20 }}
-            transition={{ duration: 0.2 }}
-            className="absolute bottom-20 right-0 flex flex-col space-y-3"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.3 }}
+            className="absolute bottom-20 right-0"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '8px',
+            }}
           >
             {contactOptions.map((option, index) => (
-              <motion.div
+              <motion.a
                 key={option.id}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                transition={{ duration: 0.2, delay: index * 0.05 }}
-                className="relative flex items-center justify-end"
+                href={option.href}
+                target={option.id === 'whatsapp' ? '_blank' : undefined}
+                rel={option.id === 'whatsapp' ? 'noopener noreferrer' : undefined}
+                initial={{ opacity: 0, x: 30, scale: 0.8 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                exit={{ opacity: 0, x: 30, scale: 0.8 }}
+                transition={{ duration: 0.25, delay: index * 0.06 }}
                 onMouseEnter={() => setHoveredId(option.id)}
                 onMouseLeave={() => setHoveredId(null)}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  justifyContent: 'flex-end',
+                }}
               >
-                {/* Tooltip */}
-                <AnimatePresence>
-                  {hoveredId === option.id && (
-                    <motion.div
-                      initial={{ opacity: 0, x: 10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: 10 }}
-                      className="absolute right-16 bg-primary-dark border border-primary-gray/30 rounded-lg px-4 py-2 shadow-xl whitespace-nowrap"
-                    >
-                      <p className="text-text-primary font-medium text-sm">{option.label}</p>
-                      <p className="text-text-secondary text-xs">{option.value}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-
-                <a
-                  href={option.href}
-                  target={option.id === 'whatsapp' ? '_blank' : undefined}
-                  rel={option.id === 'whatsapp' ? 'noopener noreferrer' : undefined}
-                  className={`${option.color} w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform duration-200`}
+                {/* Label */}
+                <motion.span
+                  initial={{ opacity: 0, x: 8 }}
+                  animate={{ opacity: hoveredId === option.id ? 1 : 0.7, x: 0 }}
+                  style={{
+                    background: 'rgba(0, 0, 0, 0.85)',
+                    backdropFilter: 'blur(12px)',
+                    border: '1px solid rgba(229, 75, 30, 0.2)',
+                    borderRadius: '8px',
+                    padding: '6px 14px',
+                    color: '#ffffff',
+                    fontSize: '13px',
+                    fontWeight: 500,
+                    letterSpacing: '0.02em',
+                    whiteSpace: 'nowrap',
+                    transition: 'all 0.2s ease',
+                  }}
                 >
-                  <option.icon className="h-5 w-5" />
-                </a>
-              </motion.div>
+                  {option.label}
+                </motion.span>
+
+                {/* Icon Button */}
+                <div
+                  style={{
+                    width: '48px',
+                    height: '48px',
+                    borderRadius: '12px',
+                    background: hoveredId === option.id
+                      ? 'linear-gradient(135deg, #E54B1E 0%, #CC0D3F 100%)'
+                      : 'rgba(0, 0, 0, 0.85)',
+                    backdropFilter: 'blur(12px)',
+                    border: hoveredId === option.id
+                      ? '1px solid transparent'
+                      : '1px solid rgba(229, 75, 30, 0.3)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    transition: 'all 0.3s ease',
+                    boxShadow: hoveredId === option.id
+                      ? '0 0 20px rgba(229, 75, 30, 0.4)'
+                      : '0 4px 16px rgba(0, 0, 0, 0.3)',
+                  }}
+                >
+                  <option.icon
+                    style={{
+                      width: '20px',
+                      height: '20px',
+                      color: hoveredId === option.id ? '#ffffff' : '#E54B1E',
+                      transition: 'color 0.3s ease',
+                    }}
+                  />
+                </div>
+              </motion.a>
             ))}
           </motion.div>
         )}
@@ -88,17 +140,59 @@ export default function SideContact() {
       {/* Main Toggle Button */}
       <motion.button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-14 h-14 rounded-full gradient-border flex items-center justify-center text-white shadow-xl hover:scale-105 transition-transform duration-200"
-        whileTap={{ scale: 0.95 }}
+        whileTap={{ scale: 0.92 }}
+        style={{
+          width: '56px',
+          height: '56px',
+          borderRadius: '14px',
+          background: isExpanded
+            ? 'rgba(0, 0, 0, 0.9)'
+            : 'linear-gradient(135deg, #E54B1E 0%, #CC0D3F 100%)',
+          border: isExpanded
+            ? '1px solid rgba(229, 75, 30, 0.4)'
+            : '1px solid transparent',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+          position: 'relative',
+          overflow: 'hidden',
+          boxShadow: isExpanded
+            ? '0 4px 20px rgba(0, 0, 0, 0.4)'
+            : '0 4px 24px rgba(229, 75, 30, 0.4)',
+          transition: 'all 0.3s ease',
+        }}
       >
+        {/* Pulse ring when closed */}
+        {!isExpanded && (
+          <motion.div
+            animate={{
+              scale: [1, 1.8, 1.8],
+              opacity: [0.4, 0, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: 'easeOut',
+            }}
+            style={{
+              position: 'absolute',
+              inset: 0,
+              borderRadius: '14px',
+              background: 'linear-gradient(135deg, #E54B1E 0%, #CC0D3F 100%)',
+            }}
+          />
+        )}
+
         <motion.div
-          animate={{ rotate: isExpanded ? 45 : 0 }}
-          transition={{ duration: 0.2 }}
+          animate={{ rotate: isExpanded ? 90 : 0 }}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+          style={{ position: 'relative', zIndex: 1 }}
         >
           {isExpanded ? (
-            <span className="text-2xl font-light">+</span>
+            <X style={{ width: '22px', height: '22px', color: '#E54B1E' }} />
           ) : (
-            <MessageCircle className="h-6 w-6" />
+            <MessageCircle style={{ width: '24px', height: '24px', color: '#ffffff' }} />
           )}
         </motion.div>
       </motion.button>

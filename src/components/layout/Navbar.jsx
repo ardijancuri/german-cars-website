@@ -338,7 +338,7 @@ export default function Navbar() {
                   <FontAwesomeIcon icon={faInstagram} style={{ height: '24px', width: '24px' }} />
                 </a>
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/profile.php?id=100093440282651"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
