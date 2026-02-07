@@ -22,23 +22,22 @@ export default function Showroom() {
       <section
         style={{
           position: 'relative',
-          padding: '80px 0',
+          padding: '160px 0 80px',
           overflow: 'hidden',
         }}
-        className="lg:py-28"
+        className="lg:pt-52 lg:pb-28"
       >
         <div className="absolute inset-0">
           <img
             src="/images/porche-car1.jpeg"
             alt="Epic Cars Showroom"
-            className="w-full h-full object-cover"
-            style={{ opacity: 0.2 }}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }}
           />
           <div
             style={{
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8), #000000)',
+              background: 'linear-gradient(to right, #000000, rgba(0,0,0,0.8), transparent)',
             }}
           />
         </div>
@@ -54,13 +53,12 @@ export default function Showroom() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            style={{ textAlign: 'center' }}
+            style={{ maxWidth: '768px' }}
           >
             <div
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
                 gap: '12px',
                 marginBottom: '24px',
               }}
@@ -105,35 +103,12 @@ export default function Showroom() {
               style={{
                 color: 'rgba(255, 255, 255, 0.7)',
                 fontSize: '18px',
-                maxWidth: '768px',
-                margin: '0 auto 32px',
                 lineHeight: 1.7,
               }}
             >
               Entdecken Sie unsere Arbeiten und lassen Sie sich von den Fahrzeugen inspirieren,
               die wir veredelt haben. Jedes Projekt ist ein Unikat.
             </p>
-            {/* Mini stats */}
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '32px' }}>
-              <div style={{ textAlign: 'center' }}>
-                <div
-                  className="gradient-text"
-                  style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 900 }}
-                >
-                  500+
-                </div>
-                <div style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '14px' }}>Projekte</div>
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <div
-                  className="gradient-text"
-                  style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 900 }}
-                >
-                  10+
-                </div>
-                <div style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '14px' }}>Jahre</div>
-              </div>
-            </div>
           </motion.div>
         </div>
       </section>

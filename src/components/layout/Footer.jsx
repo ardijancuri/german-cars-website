@@ -53,7 +53,7 @@ export default function Footer() {
               <img
                 src="/images/autopflege-logo.svg"
                 alt="Autopflege Aria"
-                style={{ height: '36px', width: 'auto' }}
+                style={{ height: '56px', width: 'auto' }}
               />
             </Link>
             <p

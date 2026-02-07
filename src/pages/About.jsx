@@ -9,20 +9,6 @@ const stats = [
   { number: '50+', label: 'Zertifizierungen', icon: Award },
 ]
 
-const team = [
-  {
-    name: 'Max Mustermann',
-    role: 'Geschäftsführer',
-    image: '/images/testimonial-1.jpg',
-    description: 'Gründer und Inhaber mit über 15 Jahren Erfahrung in der Fahrzeugveredelung.',
-  },
-  {
-    name: 'Thomas Schmidt',
-    role: 'Leiter Werkstatt',
-    image: '/images/testimonial-2.jpg',
-    description: 'XPEL-zertifizierter Spezialist für Lackschutzfolien und Car Wrapping.',
-  },
-]
 
 export default function About() {
   return (
@@ -31,11 +17,11 @@ export default function About() {
       <section
         style={{
           position: 'relative',
-          padding: '80px 0',
+          padding: '160px 0 80px',
           backgroundColor: '#000000',
           overflow: 'hidden',
         }}
-        className="lg:py-28"
+        className="lg:pt-52 lg:pb-28"
       >
         <div className="absolute inset-0">
           <img
@@ -280,129 +266,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section
-        style={{
-          padding: '80px 0',
-          backgroundColor: '#161616',
-        }}
-        className="lg:py-28"
-      >
-        <div
-          style={{
-            maxWidth: '1400px',
-            margin: '0 auto',
-            padding: '0 24px',
-          }}
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            style={{
-              textAlign: 'center',
-              marginBottom: '56px',
-            }}
-            className="lg:mb-20"
-          >
-            <h2
-              className="headline-decorated"
-              style={{
-                fontSize: 'clamp(1.5rem, 4vw, 2.25rem)',
-                fontWeight: 900,
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em',
-                marginBottom: '24px',
-                color: '#ffffff',
-              }}
-            >
-              Unser Team
-            </h2>
-            <p
-              style={{
-                color: 'rgba(255, 255, 255, 0.7)',
-                maxWidth: '576px',
-                margin: '0 auto',
-                fontSize: '16px',
-                lineHeight: 1.7,
-              }}
-              className="lg:text-lg"
-            >
-              Die Menschen hinter Epic Cars - leidenschaftlich, qualifiziert und engagiert.
-            </p>
-          </motion.div>
-
-          <div
-            style={{ gap: '16px', maxWidth: '896px', margin: '0 auto' }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:gap-6"
-          >
-            {team.map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                style={{
-                  backgroundColor: 'rgba(0, 0, 0, 0.4)',
-                  borderRadius: '12px',
-                  padding: '24px',
-                  transition: 'all 0.3s ease',
-                }}
-                className="sm:p-5 lg:p-6"
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.6)'
-                  e.currentTarget.style.transform = 'translateY(-4px)'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.4)'
-                  e.currentTarget.style.transform = 'translateY(0)'
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
-                  <div
-                    className="gradient-bg"
-                    style={{
-                      padding: '2px',
-                      borderRadius: '50%',
-                      flexShrink: 0,
-                    }}
-                  >
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      style={{
-                        width: '80px',
-                        height: '80px',
-                        borderRadius: '50%',
-                        objectFit: 'cover',
-                      }}
-                    />
-                  </div>
-                  <div>
-                    <h3
-                      style={{
-                        color: '#ffffff',
-                        fontWeight: 700,
-                        fontSize: '18px',
-                      }}
-                    >
-                      {member.name}
-                    </h3>
-                    <p style={{ color: '#E54B1E', fontSize: '14px', marginBottom: '8px' }}>
-                      {member.role}
-                    </p>
-                    <p style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '14px' }}>
-                      {member.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Partners */}
       <Partners />

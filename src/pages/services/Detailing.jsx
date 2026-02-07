@@ -54,10 +54,10 @@ export default function Detailing() {
       <section
         style={{
           position: 'relative',
-          padding: '80px 0',
+          padding: '160px 0 80px',
           overflow: 'hidden',
         }}
-        className="lg:py-28"
+        className="lg:pt-52 lg:pb-28"
       >
         <div className="absolute inset-0">
           <img
