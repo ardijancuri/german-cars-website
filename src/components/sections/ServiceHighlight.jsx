@@ -93,8 +93,8 @@ export default function ServiceHighlight() {
             top: 0,
             left: 0,
             right: 0,
-            height: '60%',
-            background: 'linear-gradient(to bottom, #000000 0%, rgba(0,0,0,0.8) 35%, rgba(0,0,0,0.4) 65%, transparent 100%)',
+            height: '65%',
+            background: 'linear-gradient(to bottom, #000000 0%, #000000 15%, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.3) 72%, transparent 100%)',
             pointerEvents: 'none',
             zIndex: 2,
           }}
