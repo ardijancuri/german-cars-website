@@ -77,7 +77,7 @@ export default function ServiceHighlight() {
       <div style={{ position: 'relative' }}>
         {/* Car Image - full width, contain on mobile */}
         <img
-          src="/images/porche-background.png"
+          src="/images/porche-background.avif"
           alt="Porsche 911 - Perfektion in allen Details"
           className="service-highlight-img"
           style={{

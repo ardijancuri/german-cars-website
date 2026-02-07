@@ -282,7 +282,7 @@ export default function Footer() {
               </p>
               <p>
                 <a
-                  href="mailto:info@epic-cars.de"
+                  href="mailto:autopflegearia@gmail.com"
                   style={{
                     color: 'rgba(255, 255, 255, 0.6)',
                     textDecoration: 'none',
@@ -292,7 +292,7 @@ export default function Footer() {
                   onMouseEnter={(e) => e.target.style.color = '#E54B1E'}
                   onMouseLeave={(e) => e.target.style.color = 'rgba(255, 255, 255, 0.6)'}
                 >
-                  info@epic-cars.de
+                  autopflegearia@gmail.com
                 </a>
               </p>
             </address>

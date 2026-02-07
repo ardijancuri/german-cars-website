@@ -186,13 +186,13 @@ h1, h2, h3, h4, h5, h6 {
    ============================================ */
 
 .hero-overlay {
-  background: radial-gradient(ellipse farthest-side, rgba(0,0,0,0.3) 0%, #000 100%);
+  background: rgba(0, 0, 0, 0.6);
 }
 
-/* Full screen overlay for mobile */
-@media (max-width: 768px) {
+/* Desktop: top and bottom gradients only */
+@media (min-width: 1024px) {
   .hero-overlay {
-    background: rgba(0, 0, 0, 0.6);
+    background: none;
   }
 }
 

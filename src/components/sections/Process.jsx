@@ -75,7 +75,7 @@ export default function Process() {
               color: '#ffffff',
             }}
           >
-            Ihr Weg zum Epic Car
+            Ihr Weg zum Autopflege Aria
           </h2>
           <p
             style={{

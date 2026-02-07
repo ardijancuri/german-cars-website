@@ -13,13 +13,13 @@ const heroSlides = [
     subtitle: 'Schutz, Optik, Performance',
   },
   {
-    image: '/images/car-wraping.jpg',
+    image: '/images/herosection1.jpeg',
     title: 'Premium',
     highlight: 'Car Wrapping',
     subtitle: 'Individuelle Designs für Ihr Fahrzeug',
   },
   {
-    image: '/images/herosection2.jpeg',
+    image: '/images/porche-background1.avif',
     title: 'Professioneller',
     highlight: 'Lackschutz',
     subtitle: 'XPEL PPF Schutzfolien vom Experten',
@@ -62,7 +62,7 @@ export default function Hero() {
                 }}
               />
 
-              {/* Radial Overlay like reference */}
+              {/* Full overlay - mobile only */}
               <div className="hero-overlay" style={{ position: 'absolute', inset: 0 }} />
 
               {/* Bottom black gradient - mobile only */}
@@ -80,6 +80,36 @@ export default function Hero() {
                 }}
               />
 
+              {/* Top gradient - desktop only */}
+              <div
+                className="hidden lg:block"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: '70%',
+                  background: 'linear-gradient(to bottom, #000000 0%, rgba(0,0,0,0.5) 40%, transparent 100%)',
+                  pointerEvents: 'none',
+                  zIndex: 1,
+                }}
+              />
+
+              {/* Bottom gradient - desktop only */}
+              <div
+                className="hidden lg:block"
+                style={{
+                  position: 'absolute',
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: '70%',
+                  background: 'linear-gradient(to top, #000000 0%, rgba(0,0,0,0.7) 30%, transparent 100%)',
+                  pointerEvents: 'none',
+                  zIndex: 1,
+                }}
+              />
+
               {/* Content - Centered */}
               <div
                 style={{
@@ -88,6 +118,7 @@ export default function Hero() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
+                  zIndex: 2,
                 }}
               >
                 <div
@@ -132,7 +163,31 @@ export default function Hero() {
                       {slide.subtitle}
                     </p>
 
-                    <Link to="/kontakt" className="btn-primary">
+                    <Link
+                      to="/kontakt"
+                      style={{
+                        display: 'inline-block',
+                        padding: '14px 36px',
+                        background: 'transparent',
+                        border: '2px solid #ffffff',
+                        borderRadius: '0',
+                        color: '#ffffff',
+                        fontSize: '14px',
+                        fontWeight: 700,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.05em',
+                        textDecoration: 'none',
+                        transition: 'all 0.3s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = 'linear-gradient(135deg, #E54B1E 0%, #CC0D3F 100%)'
+                        e.currentTarget.style.borderColor = 'transparent'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = 'transparent'
+                        e.currentTarget.style.borderColor = '#ffffff'
+                      }}
+                    >
                       Angebot anfordern
                     </Link>
                   </motion.div>

@@ -231,7 +231,7 @@ export default function ContactForm() {
                 <div style={{ flex: 1 }}>
                   <h4 style={{ color: '#ffffff', fontWeight: 600, marginBottom: '4px', fontSize: '15px' }}>E-Mail</h4>
                   <a
-                    href="mailto:info@epic-cars.de"
+                    href="mailto:autopflegearia@gmail.com"
                     style={{
                       color: 'rgba(255, 255, 255, 0.6)',
                       textDecoration: 'none',
@@ -241,7 +241,7 @@ export default function ContactForm() {
                     onMouseEnter={(e) => e.target.style.color = '#E54B1E'}
                     onMouseLeave={(e) => e.target.style.color = 'rgba(255, 255, 255, 0.6)'}
                   >
-                    info@epic-cars.de
+                    autopflegearia@gmail.com
                   </a>
                 </div>
               </div>
