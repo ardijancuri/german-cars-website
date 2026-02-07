@@ -93,7 +93,7 @@ export default function ServiceHighlight() {
             top: 0,
             left: 0,
             right: 0,
-            height: '55%',
+            height: '60%',
             background: 'linear-gradient(to bottom, #000000 0%, rgba(0,0,0,0.8) 35%, rgba(0,0,0,0.4) 65%, transparent 100%)',
             pointerEvents: 'none',
             zIndex: 2,
@@ -452,7 +452,7 @@ export default function ServiceHighlight() {
             min-height: 400px;
           }
           .service-highlight-header {
-            padding-top: 180px !important;
+            padding-top: 240px !important;
           }
         }
       `}</style>
