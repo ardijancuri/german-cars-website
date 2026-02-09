@@ -479,14 +479,14 @@ export default function Navbar() {
                   >
                     Services
                   </p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0px' }}>
                     {services.map((service) => (
                       <Link
                         key={service.path}
                         to={service.path}
                         style={{
                           display: 'block',
-                          padding: '12px 0',
+                          padding: '6px 0',
                           fontSize: '18px',
                           color: 'rgba(255, 255, 255, 0.9)',
                           textDecoration: 'none',
@@ -510,14 +510,14 @@ export default function Navbar() {
                 />
 
                 {/* Main Links */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '32px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', marginBottom: '32px' }}>
                   {navLinks.map((link) => (
                     <Link
                       key={link.path}
                       to={link.path}
                       style={{
                         display: 'block',
-                        padding: '12px 0',
+                        padding: '6px 0',
                         fontSize: '18px',
                         color: 'rgba(255, 255, 255, 0.9)',
                         textDecoration: 'none',
