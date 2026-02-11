@@ -15,7 +15,7 @@ const fullServices = [
   {
     title: 'Qualifikation',
     description: 'Jahrelange Erfahrung mit Premium-Fahrzeugen aller Marken. Zertifizierte XPEL-Installateure.',
-    image: '/images/XPEL-Installateure.avif',
+    image: '/images/XPEL-installers.avif',
     icon: Award,
   },
   {
